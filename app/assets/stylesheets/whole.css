@@ -1,0 +1,102 @@
+
+.whole-content {
+    margin: auto 0 auto;
+    padding-left:35px;
+    padding-right:35px;
+}
+
+.whole-table-left {
+    float:left;
+    width:400px;
+}
+
+.whole-table-right {
+    float:right;
+    width:400px;
+}
+
+.whole-main-columns {
+    float: left;
+    width: 360px;
+}
+
+.whole-article, .whole-name, .whole-price, .whole-count {
+    float: left;
+    height: 22px;
+    padding-top: 3px;
+}
+
+.whole-article, .whole-name, .whole-price, .whole-count {
+    border-bottom: 1px groove black;
+}
+
+.whole-article {
+    width: 50px;
+}
+
+.whole-name {
+    width: 250px;
+}
+
+.whole-price {
+    width: 60px;
+}
+
+.whole-count-column {
+    float: left;
+    width: 40px;
+}
+
+.whole-count {
+    width: 40px;
+}
+
+.sub-summary {
+    clear: both;
+    width: 400px;
+    font-size: 1.1em;
+    padding-top: 10px;
+    background: yellow;
+    text-align:right;
+}
+
+#whole-summary-price {
+    clear: both;
+    float: right;
+    width: 210px;
+    font-size: 1.6em;
+    padding: 20px;
+    background: yellow;
+    text-align:right;
+}
+
+/*BUTTONS*/
+
+.button-add {
+    background: white url("/images/add-big.jpg") no-repeat center;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.button-add:active {
+    background-image: url("/images/add.jpg");
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.button-delete {
+    background: white url("/images/remove-big.jpg") no-repeat center;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.button-delete:active {
+    background: white url("/images/remove.jpg") no-repeat center;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+

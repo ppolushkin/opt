@@ -1,0 +1,20 @@
+
+.toolbar {
+    height: 24px;
+    width: 385px;
+    padding: 0;
+    margin-bottom: 3px;
+    background: #ffffff url("../images/toolbar.gif") top left no-repeat;
+}
+
+.toolbar a {
+    display: block;
+    width: 24px;
+    height: 24px;
+    float: left;
+}
+
+.toolbar a span {
+    display: none;
+}
+

@@ -1,0 +1,63 @@
+
+#buy {
+    margin: auto 0 auto;
+}
+
+#buy-img {
+    float: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 450px;
+    height: 600px
+}
+
+#buy-info {
+    width: 480px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#buy-warning {
+    border: 1px solid #222222;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom: 10px;
+    background-color: #fafad2;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+#buy-rules {
+    padding-top: 20px;
+    padding-bottom:30px;
+}
+
+#buy-info h3 {
+    background: none;
+    padding-left: 0;
+}
+
+#buy-description {
+    height: 275px;
+}
+
+#buy-cost {
+    font-size: 2em;
+    float: left;
+    text-align: right;
+}
+
+#back-link {
+    clear: both;
+    float:  right;
+    width: 85px;
+    text-align: right;
+    text-decoration: none;
+    padding-top:20px;
+}
+
+#back-link img {
+    float: left;
+    margin-top: -7px;
+}

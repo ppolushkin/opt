@@ -1,0 +1,14 @@
+<h3>Изделия</h3>
+
+<%= render 'template' %>
+
+<div class="sort">
+  Сортировать по:
+  <%=
+      if params[:sort] == nil
+        link_to "Дате выпуска", :controller => "store", :action => "show_goods", :sort => "date"
+      else
+        link_to "Цене", :controller => "store", :action => "show_goods"
+      end
+  %>
+</div>

@@ -1,0 +1,35 @@
+<div class="maincontent">
+
+  <script src="/assets/jquery/jquery-1.6.1.min.js" type="text/javascript"></script>
+  <script src="/assets/jquery/obelisk.js" type="text/javascript"></script>
+
+  <script type='text/javascript'>
+      jQuery.noConflict();
+      hover_button("#back-link", "/assets/back.png", "/assets/go-back.png")
+  </script>
+
+  <h3>Cообщение</h3>
+
+  <p>
+    <b>Email:</b>
+    <%= @feedback_mail.email %>
+  </p>
+
+  <p>
+    <b>Name:</b>
+    <%= @feedback_mail.name %>
+  </p>
+
+  <p>
+    <b>Phone:</b>
+    <%= @feedback_mail.phone %>
+  </p>
+
+  <p>
+    <b>Message:</b>
+    <%= @feedback_mail.message %>
+  </p>
+
+
+  <a id="back-link" href="javascript: history.go(-1)"><img src="/assets/back.png" alt="Назад"/> Назад</a>
+</div>

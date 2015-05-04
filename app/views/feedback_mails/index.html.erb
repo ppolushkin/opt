@@ -1,0 +1,27 @@
+<h3>Listing feedback_mails</h3>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Message</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @feedback_mails.each do |feedback_mail| %>
+  <tr>
+    <td><%= feedback_mail.email %></td>
+    <td><%= feedback_mail.name %></td>
+    <td><%= feedback_mail.phone %></td>
+    <td><%= link_to 'Show', feedback_mail %></td>
+    <td><%= link_to 'Destroy', feedback_mail, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Feedback mail', new_feedback_mail_path %>

@@ -1,0 +1,59 @@
+.right-div {
+    float: right;
+    width: 275px;
+    margin-right: 5px;
+    font-size: 0.7em;
+    border-left: #faebd7;
+    padding-top: 15px;
+}
+
+.right-div li {
+    clear: both;
+    margin-left: 10px;
+    margin-bottom: 0;
+    margin-top: 4px;
+    padding: 0;
+}
+
+.main-div {
+    margin-right: 295px;
+    margin-left: 10px;
+    font-size: 1.1em;
+}
+
+.footer-div {
+    margin-top: 25px;
+    font-size: 0.8em;
+    margin-left: 20px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.descr {
+    width: 140px;
+    float: left;
+}
+
+.image {
+    float: right;
+    width: 135px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+em {
+    text-decoration:underline;
+}
+
+.mail {
+    float: right;
+    width: 90px;
+    text-align: center;
+    height: 50px;
+}
