@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.xml
   def index
-    @pages = Page.find_all_by_application_name APPLICATION_NAME
+    @pages = Page.where("application_name = '#{APPLICATION_NAME}'").order("title")
 
     respond_to do |format|
       format.html # index.html.erb

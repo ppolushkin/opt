@@ -7,7 +7,7 @@ class FeedbackMailsController < ApplicationController
   # GET /feedback_mails
   # GET /feedback_mails.xml
   def index
-    @feedback_mails = FeedbackMail.find_all_by_application_name APPLICATION_NAME
+    @feedback_mails = FeedbackMail.where("application_name = '#{APPLICATION_NAME}'").order("created_at")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,7 +40,7 @@ class FeedbackMailsController < ApplicationController
   # POST /feedback_mails
   # POST /feedback_mails.xml
   def create
-    @feedback_mail = FeedbackMail.new(params[:feedback_mail])
+    @feedback_mail = FeedbackMail.new(feedback_mail)
 
     respond_to do |format|
       if @feedback_mail.save
@@ -62,6 +62,13 @@ class FeedbackMailsController < ApplicationController
       format.html { redirect_to(feedback_mails_url) }
       format.xml  { head :ok }
     end
+  end
+
+
+  private
+
+  def feedback_mail()
+    params.require(:feedback_mail).permit(:email, :name, :phone, :message, :commit);
   end
 
 

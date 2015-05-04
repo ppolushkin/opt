@@ -5,7 +5,7 @@ require 'bcrypt'
 class Admin < ActiveRecord::Base
   include BCrypt
 
-  validates :email, :uniqueness => true, :email => true
+  validates :email, :presence => true
 
   def password
     if password_hash

@@ -8,6 +8,7 @@ class FeedbackMail < ActiveRecord::Base
       :message => "Ваш почтовый ящик не указан "
   }
 
+  validates_email_format_of :email, :message => 'Укажите почтовый адрес (свой email)'
   # validates :email, :email => true
 
   validates :name, :format => {

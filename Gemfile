@@ -30,6 +30,8 @@ gem 'carrierwave', '>=0.10.0'
 
 gem 'fog', '~> 1.29.0'
 
+gem 'validates_email_format_of'
+
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
   gem 'debugger'
