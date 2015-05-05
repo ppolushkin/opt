@@ -13,7 +13,7 @@ body {
     text-align: center;
     font: 1.2em Arial, Helvetica, sans-serif;
     min-width: 980px;
-    background: url(../assets/pagebackground-valentinesday.jpg) no-repeat #FFF top center fixed !important;
+    background: url(../images/pagebackground-valentinesday.jpg) no-repeat #FFF top center fixed !important;
     margin-top: 0;
 }
 
@@ -87,7 +87,7 @@ h1 {
     text-align: left;
     padding: 43px 0 4px 0;
     letter-spacing: 1px;
-    background: url('../assets/h1-bg.gif') repeat-x 0 100%;
+    background: url('../images/h1-bg.gif') repeat-x 0 100%;
     width: 50%;
 }
 
@@ -118,7 +118,7 @@ h3 {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: normal;
     letter-spacing: 2px;
-    background: url('../assets/h3-bg.png') no-repeat 0 60%;
+    background: url('../images/h3-bg.png') no-repeat 0 60%;
     padding-left: 15px;
     margin-left: 15px;
     padding-top: 10px;
@@ -154,7 +154,7 @@ ul#navigation li a:hover {
 }
 
 li#house {
-    background: url('../assets/house.gif') no-repeat 0 1px;
+    background: url('../images/house.gif') no-repeat 0 1px;
     padding-left: 24px;
 }
 
@@ -163,7 +163,7 @@ li#house a {
 }
 
 li#sitemap {
-    background: url('../assets/sitemap.gif') no-repeat 0 2px;
+    background: url('../images/sitemap.gif') no-repeat 0 2px;
     padding-left: 24px;
     margin-left: 16px;
 }
@@ -173,7 +173,7 @@ li#sitemap a {
 }
 
 li#envelope {
-    background: url('../assets/envelope.gif') no-repeat 0 2px;
+    background: url('../images/envelope.gif') no-repeat 0 2px;
     padding-left: 23px;
     margin-left: 16px;
 }
@@ -214,7 +214,7 @@ li#envelope {
     height: 32px;
     line-height: 32px;
     margin-left: 3px;
-    background: #323232 url('../assets/li-bg.png') repeat-x 0 0;
+    background: #323232 url('../images/li-bg.png') repeat-x 0 0;
     border: 1px solid black;
     border-bottom: none;
 }
@@ -228,7 +228,7 @@ li#envelope {
 }
 
 #menu li a.active {
-    background: #232323 url('../assets/li-bg-hover.gif') repeat-x 0 0;
+    background: #232323 url('../images/li-bg-hover.gif') repeat-x 0 0;
     color: #FFFFFF;
     text-decoration: none;
     border: 1px solid #2D4A00;

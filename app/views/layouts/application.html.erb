@@ -10,13 +10,7 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-<!--[if IE 7]>
-    <link href="/stylesheets/IE/ie7_fixes.css" media="screen" rel="stylesheet" type="text/css"/>
-<![endif]-->
-<!--[if lte IE 6]>
-    <link href="/stylesheets/IE/ie6_fixes.css" media="screen" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="/javascripts/IE/unitpngfix.js"></script>
-<![endif]-->  
+
   <%= csrf_meta_tag %>
 
   <title>Траурные ритуальные венки и корзины. Оптовая и розничная продажа по России</title>
@@ -34,7 +28,7 @@
       <% end %>
     </ul>
 
-    <img src="<%= asset_path('logo.png') %>" alt="obelisk" id="logo"/>
+    <img src="/images/logo.png" alt="obelisk" id="logo"/>
 
     <h1><a href="/about_us">Траурные ритуальные венки и корзины</a></h1>
 

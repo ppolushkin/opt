@@ -1,13 +1,5 @@
 <div class="maincontent">
 
-  <script src="/javascripts/jquery/jquery-1.6.1.min.js" type="text/javascript"></script>
-  <script src="/javascripts/jquery/obelisk.js" type="text/javascript"></script>
-
-  <script type='text/javascript'>
-      jQuery.noConflict();
-      hover_button("#back-link", "/back.png", "/assets/go-back.png")
-  </script>
-
   <%= raw @page.revisions.last.content %>
 
   <a id="back-link" href="javascript: history.go(-1)"><img src="<%= asset_path('back.png') %>" alt="Назад"/> Назад</a>
