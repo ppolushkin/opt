@@ -1,75 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta name="Description"
-        content="Оптовая розничная продажа ритуальных траурных венков и корзин по России."/>
-  <meta name="Keywords" content="траурные,ритуальные,венки,россия"/>
-  <meta name="robots" content="all,follow"/>
-  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Оптовая розничная продажа ритуальных траурных венков и корзин по России.</title>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 
-  <%= csrf_meta_tag %>
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
-  <title>Траурные ритуальные венки и корзины. Оптовая и розничная продажа по России</title>
 </head>
+
 <body>
-<div id="main">
-  <div id="header">
-    <ul id="navigation">
-      <% if session[:admin] %>
-          <li id="house"><%= link_to 'Выйти', logout_path, :method => :delete %></li>
-          <li id="sitemap"><%= link_to 'Страницы', pages_path %></li>
-          <li id="sitemap"><%= link_to 'Сообщения', feedback_mails_path %></li>
-      <% else %>
-          <li id="house"><%= link_to 'Войти в систему', login_path %></li>
-      <% end %>
-    </ul>
 
-    <img src="/images/logo.png" alt="obelisk" id="logo"/>
-
-    <h1><a href="/about_us">Траурные ритуальные венки и корзины</a></h1>
-
-    <h2 class="new"><a href="http://www.venki-spb.ru">Открыт интернет-магазин в Спб!</a></h2>
-
-    <h2 class="new">&nbsp;</h2>
-
-    <div class="order-phone1">
-      <a href="/contacts">Опт:&nbsp;+7(911) 100-07-00</a>
+<nav class="navbar venok-navbar">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">ПК "Венок"</a>
     </div>
 
-    <div class="order-phone2">
-      <!--<a href="/contacts">Розница:&nbsp;+7(911) 127-71-77</a>-->
-      <a href="http://www.venki-spb.ru">Розница:&nbsp;www.venki-spb.ru</a>
-    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="/about_us">О Нас</a></li>
+        <li><a href="/ritual_venki">Венки</a></li>
+        <li><a href="/ritual_korsinu">Корзины</a></li>
+        <li><a href="/goods">Изделия</a></li>
+        <li><a href="/may_9">Защитникам Отечества</a></li>
+        <li><a href="/novinki">Новинки</a></li>
+        <li><a href="/links">Ссылки</a></li>
+        <li><a href="/contacts">Контакты</a></li>
 
-    <div class="order-phone3">
-      <a href="http://www.venki-spb.ru">+7(911) 127-71-77</a>
-    </div>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
 
-    <ul id="menu">
-      <%= raw tab_list_raw %>
-    </ul>
-  </div>
-
-  <hr class="noscreen"/>
-
-  <div id="content">
-    <%= raw print_notice(notice) %>
-    <%= yield %>
-  </div>
-
-  <hr class="noscreen"/>
-
-  <div class="cleaner">&nbsp;</div>
-
-  <div id="footer">
-    ПК Венок 2009-2013
-  </div>
+<div class="container">
+  <%= yield %>
 </div>
-<%= render :file => '/layouts/_counters.html' %>
+
+
+
 </body>
 </html>

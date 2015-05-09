@@ -9,7 +9,25 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
- *= require_tree .
- *= require_self
  */
+
+$navbar-inverse-link-color: #fff;
+$navbar-inverse-link-hover-bg: #454a46 ;
+$navbar-inverse-link-active-bg: #757a76;
+$navbar-inverse-brand-color: yellow;
+$navbar-inverse-brand-hover-color: yellow;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.venok-navbar {
+  @extend .navbar-inverse;
+  margin-top: 25px;
+}
+
+.venok-navbrand {
+  @extend .navbar-brand;
+  color: #fdfd51 !important;
+}
+

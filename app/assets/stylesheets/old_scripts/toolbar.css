@@ -4,7 +4,7 @@
     width: 385px;
     padding: 0;
     margin-bottom: 3px;
-    background: #ffffff url("../../../public/images/toolbar.gif") top left no-repeat;
+    background: #ffffff url("../../../../public/images/toolbar.gif") top left no-repeat;
 }
 
 .toolbar a {
