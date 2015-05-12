@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   controller :sessions do
     get 'login' => :show_login_form, :as => 'login'
+    get 'login_area' => :login_area
     post 'login' => :log_in
     delete 'logout' => :log_out
   end

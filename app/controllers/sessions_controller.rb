@@ -20,7 +20,13 @@ include SessionsHelper
 
   def log_out
     session[:admin] = false
-    redirect_to about_us_url, :notice => "Logged out"
+    render json: {:state => '/login_area'}
+     # redirect_to about_us_url, :notice => "Logged out"
   end
+
+  def login_area
+    render :layout => false
+  end
+
 
 end

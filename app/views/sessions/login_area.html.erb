@@ -1,0 +1,9 @@
+<div class="row">
+  <% if session[:admin] %>
+      <div class="col-md-1 col-md-offset-9"><small><a href="#">Сообщения</a></small></div>
+      <div class="col-md-1"><small><a href="#">Страницы</a></small></div>
+      <div class="col-md-1"><small><%= link_to 'Выйти', logout_path, :method => :delete  %></small></div>
+  <% else %>
+      <div class="col-md-1 col-md-offset-11"><small><%= link_to 'Войти', login_path %></small></div>
+  <% end %>
+</div>

@@ -14,17 +14,12 @@
 $navbar-inverse-link-color: #fff;
 $navbar-inverse-link-hover-bg: #454a46 ;
 $navbar-inverse-link-active-bg: #757a76;
-$navbar-inverse-brand-color: yellow;
+$navbar-inverse-brand-color: #F5D102;
 $navbar-inverse-brand-hover-color: yellow;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
-.venok-navbar {
-  @extend .navbar-inverse;
-  margin-top: 25px;
-}
 
 .venok-navbrand {
   @extend .navbar-brand;
