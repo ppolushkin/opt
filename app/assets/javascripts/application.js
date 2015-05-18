@@ -9,43 +9,27 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//= require jquery-2.1.4
-//= require bootstrap
-//= require session
+//
+//= require angular/angular.min
+// require session
 // require_tree
 
 
-$( document ).ready(function() {
+//$( document ).ready(function() {
+//
+//    var path = window.location.pathname;
+//    var selector = "li a[href*='" + path + "']";
+//
+//    $(selector).parent().addClass('active');
+//
+//});
 
-    var path = window.location.pathname;
-    var selector = "li a[href*='" + path + "']";
 
-    $(selector).parent().addClass('active');
+var app = angular.module('obelisk', []);
 
+app.controller('mainCtrl', function ($scope) {
+    $scope.name = "AngularJS"
 });
 
 
-
-
-
-//$( document ).ready(function() {
-//    console.log( "ready!" );
-//    $("a[data-method|=delete]").on( "click", function( event ) {
-//        var path = this.href;
-//        var token = $( 'meta[name="csrf-token"]' ).attr( 'content' );
-//        $.ajax({
-//            url: path,
-//            type: 'DELETE',
-//            beforeSend: function ( xhr ) {
-//                xhr.setRequestHeader( 'X-CSRF-Token', token );
-//            },
-//            success: function (d,s) {
-//                window.location.href = d.state;
-//                //$('#login_area').load(d.state);
-//            }
-//        });
-//        event.preventDefault();
-//    });
-//
-//});
 

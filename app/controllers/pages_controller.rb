@@ -24,6 +24,11 @@ class PagesController < ApplicationController
     end
   end
 
+
+#  def rest_service
+#    render json: {:crap => 'crap'}
+#  end
+
   # GET /pages/1
   # GET /pages/1.xml
   def show_by_page_ref
