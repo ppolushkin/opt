@@ -10,7 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require angular/angular.min
+//= require angular/angular
+//= require angular-route/angular-route
+//= require app
+//= require controllers
 // require session
 // require_tree
 
@@ -25,11 +28,7 @@
 //});
 
 
-var app = angular.module('obelisk', []);
 
-app.controller('mainCtrl', function ($scope) {
-    $scope.name = "AngularJS"
-});
 
 
 

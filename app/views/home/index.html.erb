@@ -1,3 +1,5 @@
+<body ng-app="obelisk">
+
 <div class="container-fluid" id="login_area">
   <div class="row">
     <% if session[:admin] %>
@@ -26,14 +28,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/about_us">О Нас</a></li>
-        <li><a href="/ritual_venki">Венки</a></li>
-        <li><a href="/ritual_korsinu">Корзины</a></li>
-        <li><a href="/goods">Изделия</a></li>
-        <li><a href="/may_9">Защитникам Отечества</a></li>
-        <li><a href="/novinki">Новинки</a></li>
-        <li><a href="/links">Ссылки</a></li>
-        <li><a href="/contacts">Контакты</a></li>
+        <li><a href="#/page/about_us">О Нас</a></li>
+        <li><a href="#/store/ritual_venki">Венки</a></li>
+        <li><a href="#/store/ritual_korsinu">Корзины</a></li>
+        <li><a href="#/store/goods">Изделия</a></li>
+        <li><a href="#/store/may_9">Защитникам Отечества</a></li>
+        <li><a href="#/store/novinki">Новинки</a></li>
+        <li><a href="#/page/links">Ссылки</a></li>
+        <li><a href="#/page/contacts">Контакты</a></li>
 
       </ul>
 
@@ -42,6 +44,7 @@
 </nav>
 
 
-<div class="container">
-  HERE IS CONTENT
-</div>
+<div ng-view></div>
+
+
+</body>
