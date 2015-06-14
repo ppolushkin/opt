@@ -9,24 +9,19 @@ obeliskControllers.controller('StoreCtrl', StoreCtrl);
 StoreCtrl.$inject = ['$scope', '$routeParams'];
 
 function StoreCtrl($scope, $routeParams) {
-
     $scope.goods_type = $routeParams.goods_type;
-
-    $scope.phones = [
-        {'name': 'Nexus S',
-            'snippet': 'Fast just got faster with Nexus S.'},
-        {'name': 'Motorola XOOM™ with Wi-Fi',
-            'snippet': 'The Next, Next Generation tablet.'},
-        {'name': 'MOTOROLA XOOM™',
-            'snippet': 'The Next, Next Generation tablet.'}
-    ];
 }
 
 obeliskControllers.controller('PageCtrl', PageCtrl);
 
-PageCtrl.$inject = ['$scope', '$routeParams'];
+PageCtrl.$inject = ['$scope', '$routeParams', '$route'];
 
-function PageCtrl($scope, $routeParams) {
-    $scope.page_id = $routeParams.page_id;
+function PageCtrl($scope, $routeParams, $route) {
+    if ($route.current.$$route.page_id) {
+        $scope.page_id = $route.current.$$route.page_id;
+    } else {
+        $scope.page_id = $routeParams.page_id;
+    }
+
     $scope.content = "I'm page " + $scope.page_id;
 }
