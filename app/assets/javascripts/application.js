@@ -13,21 +13,9 @@
 //= require angular/angular
 //= require angular-route/angular-route
 //= require app
-//= require controllers
-// require session
+//= require page-controller
+//= require store-controller
 // require_tree
-
-
-//$( document ).ready(function() {
-//
-//    var path = window.location.pathname;
-//    var selector = "li a[href*='" + path + "']";
-//
-//    $(selector).parent().addClass('active');
-//
-//});
-
-
 
 
 
