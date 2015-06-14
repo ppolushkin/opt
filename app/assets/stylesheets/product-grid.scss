@@ -1,0 +1,110 @@
+/*
+Product grid
+*/
+
+.product-grid {
+  width: 100%;
+  margin: 10px 20px 10px 10px;
+}
+
+.product-item {
+  position: relative;
+  float: left;
+  height: 369px;
+  margin: 0 11px 11px 0;
+  width: 235px;
+}
+
+.product-item .thumb {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border: 1px solid #000000;
+  border-bottom: medium none -moz-use-text-color;
+  border-image: none;
+  display: block;
+  height: 311px;
+  width: 233px;
+}
+
+.product-item .details {
+  background: url("../images/bg-buynow.jpg") no-repeat scroll left top transparent;
+  height: 57px;
+  width: 235px;
+}
+
+.buy-button {
+  background: url("../images/button-buynow.gif") no-repeat scroll 0 0 transparent;
+  display: none;
+  float: left;
+  height: 26px;
+  margin: 7px 0 0 6px;
+  overflow: hidden;
+  text-indent: -550px;
+  width: 63px;
+}
+
+.product-item .absent-text {
+  display: none;
+  float: left;
+  height: 26px;
+  margin: 16px 0 0 6px;
+  width: 70px;
+  line-height: 7pt;
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.product-item .description {
+  position: absolute;
+  background-color: red;
+  left: 72px;
+  top: 340px;
+  width: 150px;
+  color: #FFFFFF;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 7pt;
+  padding: 1px 6px 0 3px;
+  text-align: center;
+  /*background-color: #0092ef;*/
+}
+
+.product-item .size {
+  position: absolute;
+  background-color: red;
+  left: 7px;
+  top: 350px;
+  color: #FFFFFF;
+  font-size: 0.85em;
+  line-height: 9pt;
+
+  text-align: right;
+  width: 60px;
+}
+
+.product-item .price {
+  position: absolute;
+  background-color: red;
+  left: 179px;
+  top: 319px;
+  color: #FFFFFF;
+  font-size: 1.2em;
+  text-align: right;
+  letter-spacing: -0.8px;
+  width: 50px;
+}
+
+.product-item .price span {
+  color: #FFFB02;
+  font-weight: bold;
+}
+
+.buy-button:hover {
+  background: url("../images/button-buynow.gif") no-repeat scroll 0 -52px transparent;
+}
+
+.buy-button:active {
+  background: url("../images/button-buynow.gif") no-repeat scroll 0 -26px transparent;
+}

@@ -39,5 +39,6 @@ Rails.application.routes.draw do
   get 'store/:goods_type', to: 'home#index'
   root 'home#index'
 
+  get 'api/products', :controller => 'products_rest', :action => 'all_products'
 
 end
