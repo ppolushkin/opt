@@ -1,25 +1,16 @@
 <div class="container-fluid">
 
-    Store {{ goods_type }}
+    <div ng-repeat="product in products" class="product-block">
+        <a class="thumb" href="{{product.medium_img.url}}">
+            <img src="{{product.img}}" alt="Траурный венок {{product.name}}" >
+        </a>
 
-    <div class="product-grid">
-        <div ng-repeat="product in products" class="product-item">
-            <a class="thumb" href="{{product.medium_img.url}}">
-                <!-- todo : fix small image when images ready-->
-                <img src="{{product.medium_img.url}}" alt="Траурный венок {{product.name}}" width="233" height="311">
-            </a>
-
-            <div class="details">
-               <a class="buyButton {{product.id}}> buy-button" href="{{product.link}}">Купить</a>
-                <a class="absentText {{product.id}} > absent-text" href="{{product.link}}">Описание</a>
-            </div>
-
+        <div class="details">
+            <a class="buy" href="{{product.link}}">Купить</a>
             <div class="price"><span>{{product.formatted_retail_price}}</span></div>
-
-            <div class="description">{{product.name}}</div>
-
-            <!--<div class="size">{{product_size product}}</div>-->
-
+            <div class="name">{{product.name}}</div>
+            <div class="cost">{{product.price}}</div>
+            <div class="size">{{product.size}}</div>
         </div>
     </div>
 
