@@ -1,28 +1,29 @@
+
+@media (max-width: 767px) {
+  .jumping-block:nth-child(3n+1) {
+    clear: left;
+    /*border: 1px dashed #904050;*/
+  }
+}
+
+@media (min-width: 768px) {
+  .jumping-block:nth-child(4n+1) {
+    clear: left;
+    /*border: 1px dashed #00c4c4;*/
+  }
+}
+
 .product-block {
-  @include make-xs-column(6);
-  @include make-sm-column(4);
-  @include make-md-column(3);
-  @include make-lg-column(3);
-  margin-bottom: $product-grid-bottom-offset;
+  max-width: 300px;
+  background-image: linear-gradient(315deg, #ddd, #fff);
+  border-radius: 6px 6px 4px 4px;
+  text-align: center;
+  padding-bottom: 5px;
+  margin-bottom: 25%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
 
-  img {
-    @include img-responsive;
-    @include center-block;
-    border-top-left-radius: $border-radius-large;
-    border-top-right-radius: $border-radius-large;
-  }
-
-  .details {
-    background-color: $dark;
-    color: $white;
-    border-bottom-left-radius: $border-radius-large;
-    border-bottom-right-radius: $border-radius-large;
-
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-
-
-  }
-
+.top-padding {
+  padding-top: 5px;
 }

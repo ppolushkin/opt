@@ -12,12 +12,19 @@
  *
  *= require_self
  */
-@import "variables";
+@import "colors";
 
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 @import "navigation";
 @import "product-grid";
+@import "effects";
 
+body {
+  min-width: 450px;
+}
 
+.content {
+  margin-top: 40px;
+}

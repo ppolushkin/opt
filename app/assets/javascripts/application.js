@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery/dist/jquery.min
+// require jquery.lazyload/jquery.lazyload
+//= require bootstrap-sass-official/assets/javascripts/bootstrap.min
 //= require angular/angular
 //= require angular-route/angular-route
 //= require app
