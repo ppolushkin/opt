@@ -40,5 +40,6 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'api/products', :controller => 'products_rest', :action => 'all_products'
+  get 'api/revisions/last/:ref', :controller => 'revisions_rest', :action => 'last_by_ref'
 
 end

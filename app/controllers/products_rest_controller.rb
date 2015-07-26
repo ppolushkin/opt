@@ -1,10 +1,10 @@
 # coding: utf-8
 
-class ProductsRestController  < ApplicationController
+class ProductsRestController  < RestApplicationController
 
   include StoreHelper
 
-  skip_before_filter :authorize
+  skip_before_filter :authorize, :only => [:all_products]
 
   #GET api/products
   def all_products

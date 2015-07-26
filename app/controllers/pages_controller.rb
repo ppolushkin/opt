@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class PagesController < ApplicationController
 
   skip_before_filter :authorize, :only => [:show_by_page_ref]
