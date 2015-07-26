@@ -32,7 +32,7 @@ class RevisionsRestController < RestApplicationController
       else
         render json: {
                    :id => last_revision.id,
-                   :data => last_revision.content
+                   :content => last_revision.content
                }
       end
 

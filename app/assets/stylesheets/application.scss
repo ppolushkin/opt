@@ -16,6 +16,7 @@
 
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "angular/angular-csp";
 
 @import "navigation";
 @import "product-grid";
@@ -27,8 +28,4 @@ body {
 
 .content {
   margin-top: 40px;
-}
-
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
 }

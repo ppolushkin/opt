@@ -10,15 +10,15 @@
 
   <%= csrf_meta_tag %>
 
-  <script>
-      $.noConflict();
-  </script>
-
   <base href="/">
 </head>
 
 <%= yield %>
 
 <%= javascript_include_tag 'application' %>
+
+<script>
+    $.noConflict();
+</script>
 
 </html>

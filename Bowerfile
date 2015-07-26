@@ -1,3 +1,4 @@
 asset 'angular'
+asset 'angular-sanitize'
 asset 'angular-route'
 asset 'bootstrap-sass-official'
