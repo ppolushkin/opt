@@ -4,3 +4,26 @@
   padding-bottom: 7px;
 }
 
+.brand-place {
+  position: relative;
+}
+
+.navbar-brand {
+  margin-left: 15px !important;
+}
+
+.brand-font {
+  //font-family: $font-family-monospace;
+  //font-family: $font-family-sans-serif;
+  font-family: $font-family-serif;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.slogan {
+  position: absolute;
+  top: 32px;
+  left: 55px;
+  width: 400px;
+  color: $dark-yellow;
+}

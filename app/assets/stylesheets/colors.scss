@@ -1,13 +1,14 @@
 $white: #fff;
 $dark: #454a46 ;
 $light-grey: #ddd;
-
+$dark-yellow: #F5D102;
+$yellow: yellow;
 
 $navbar-inverse-link-color: $white;
 $navbar-inverse-link-hover-bg: $dark ;
 $navbar-inverse-link-active-bg: #757a76;
-$navbar-inverse-brand-color: #F5D102;
-$navbar-inverse-brand-hover-color: yellow;
+$navbar-inverse-brand-color: $dark-yellow;
+$navbar-inverse-brand-hover-color: $yellow;
 
 
 $product-grid-bottom-offset: 40px;

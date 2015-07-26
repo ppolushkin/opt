@@ -24,6 +24,16 @@
   margin-right: 2%;
 }
 
+.product-block:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.product-block.shadow:hover {
+  box-shadow: 6px 6px 4px rgba(0, 0, 0, .5);
+}
+
 .top-padding {
   padding-top: 5px;
 }
+

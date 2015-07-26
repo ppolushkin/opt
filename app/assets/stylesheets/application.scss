@@ -23,7 +23,12 @@
 @import "effects";
 
 body {
-  min-width: 450px;
+  min-width: 640px;
+}
+
+
+.clear-left {
+  clear: left;
 }
 
 .content {
