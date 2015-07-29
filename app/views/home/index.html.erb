@@ -1,4 +1,4 @@
-<body ng-app="obelisk">
+<body data-ng-app="obelisk">
 
 <div class="container-fluid offset initially-hidden" id="login_area">
   <div class="row text-left small">
@@ -44,8 +44,7 @@
   </div>
 </div>
 
-<div ng-view class="content"></div>
-
+<div data-ng-view class="content"></div>
 
 <div class="modal-footer">
   <p class="text-muted">
@@ -56,5 +55,10 @@
   </p>
 </div>
 
+<%= javascript_include_tag 'application' %>
+
+<script>
+    $.noConflict();
+</script>
 
 </body>

@@ -15,13 +15,13 @@
 
 .product-block {
   max-width: 300px;
-  background-image: linear-gradient(315deg, #ddd, #fff);
+  background-image: linear-gradient(315deg, #ccc, #fff);
   border-radius: 6px 6px 4px 4px;
   text-align: center;
   padding-bottom: 5px;
   margin-bottom: 25%;
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: auto;
+  margin-right: auto;
 
   transition: transform 50ms linear;
 }
