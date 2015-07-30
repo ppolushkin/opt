@@ -23,16 +23,17 @@
   margin-left: auto;
   margin-right: auto;
 
-  transition: transform 50ms linear;
+  transition-property: transform;
+  transition: linear;
 }
 
 .product-block:hover {
-  transform: scale(1.02);
+  transform: scale(1.0075);
   cursor: pointer;
 }
 
 .product-block.shadow:hover {
-  box-shadow: 6px 6px 4px rgba(0, 0, 0, .5);
+  box-shadow: 5px 5px 4px $shadow-color;
 }
 
 .top-padding {
