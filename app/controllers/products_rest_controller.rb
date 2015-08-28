@@ -8,7 +8,24 @@ class ProductsRestController  < RestApplicationController
 
   #GET api/products
   def all_products
-    all_products = Product.where("article like 'В%'").order("price desc").first(25)
+    show_products(params[:goods_type])
+  end
+
+  protect_from_forgery
+
+  def show_products(goods_type)
+    key = "В"
+    if (goods_type == 'ritual_venki')
+      key = "В"
+    end
+    if (goods_type == 'ritual_korsinu')
+      key = "К"
+    end
+    if (goods_type == 'goods')
+      key = "И"
+    end
+
+    all_products = Product.where("article like '#{key}%'").order("price desc")
 
     formatted_products = Array.new
     all_products.each do |p|
