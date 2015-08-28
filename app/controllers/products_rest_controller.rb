@@ -25,7 +25,11 @@ class ProductsRestController  < RestApplicationController
       key = "И"
     end
 
-    all_products = Product.where("article like '#{key}%'").order("price desc")
+    if (goods_type == 'may_9')
+      all_products = Product.where("may9 <> '0'").order("price desc")
+    else
+      all_products = Product.where("article like '#{key}%'").order("price desc")
+    end
 
     formatted_products = Array.new
     all_products.each do |p|
