@@ -4,6 +4,7 @@
     "angular": "latest",
     "angular-sanitize": "latest",
     "angular-route": "latest",
-    "bootstrap-sass-official": "latest"
+    "bootstrap-sass-official": "latest",
+    "afkl-lazy-image": "latest"
   }
 }

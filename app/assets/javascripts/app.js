@@ -1,6 +1,6 @@
 (function() {
     angular.module('obelisk', ['ngRoute', 'obeliskControllers']);
-    angular.module('obeliskControllers', ['ngSanitize']);
+    angular.module('obeliskControllers', ['ngSanitize', 'afkl.lazyImage']);
 })();
 
 (function() {
