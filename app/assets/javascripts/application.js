@@ -16,6 +16,7 @@
 //= require angular/angular.min
 //= require angular-route/angular-route.min
 //= require angular-sanitize/angular-sanitize.min
+//= require afkl-lazy-image/release/lazy-image.min
 //= require app
 //= require page-controller
 //= require store-controller
