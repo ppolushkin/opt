@@ -1,30 +1,35 @@
 (function(){
     'use strict';
 
-    angular.module('obelisk').directive('minHeightRatio', function($window, $log) {
-       return {
-           restrict: 'A',
-           scope: {
-           },
-           link: function(scope, element, attr) {
+    angular.module('obelisk').directive('minHeightRatio', MinHeightRatioDirective);
 
-               var fixHeight = function () {
-                   if (element.height() === 0) {
-                       var ratio = attr['minHeightRatio'];
-                       element.css("min-height", element.width() * ratio);
-                   } else {
-                       element.css("min-height", 0);
-                   }
-               };
+    MinHeightRatioDirective.$inject = ['$window', '$log'];
 
-               angular.element($window).on('resize', fixHeight);
+    function MinHeightRatioDirective($window, $log) {
+        return {
+            restrict: 'A',
+            scope: {
+            },
+            link: function(scope, element, attr) {
 
-               scope.$on('$destroy', function () {
-                   angular.element($window).off('resize', fixHeight);
-               });
+                var fixHeight = function () {
+                    if (element.height() === 0) {
+                        var ratio = attr['minHeightRatio'];
+                        element.css("min-height", element.width() * ratio);
+                    } else {
+                        element.css("min-height", 0);
+                    }
+                };
 
-               fixHeight();
-           }
-       }
-    });
+                angular.element($window).on('resize', fixHeight);
+
+                scope.$on('$destroy', function () {
+                    angular.element($window).off('resize', fixHeight);
+                });
+
+                fixHeight();
+            }
+        }
+    }
+
 }());
