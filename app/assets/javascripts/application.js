@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery/dist/jquery.min
-// require jquery.lazyload/jquery.lazyload
 //= require bootstrap-sass-official/assets/javascripts/bootstrap.min
 //= require angular/angular.min
 //= require angular-route/angular-route.min
@@ -20,6 +19,7 @@
 //= require app
 //= require page-controller
 //= require store-controller
+//= require min-height-ratio-directive.js
 // require_tree
 
 
