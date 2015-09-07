@@ -43,3 +43,26 @@ body {
 .modal-footer {
   border-top: none !important;
 }
+
+@media (min-width: 768px) {
+  .short-brand {
+    display: none;
+  }
+
+  .long-brand {
+    display: inline;
+  }
+}
+
+
+@media (min-width: 0) and (max-width: 767px){
+  .short-brand {
+    display: inline;
+  }
+
+  .long-brand {
+    display: none;
+  }
+}
+
+

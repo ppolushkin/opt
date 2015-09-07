@@ -1,8 +1,4 @@
 
 .afkl-lazy-image-loading{
-  padding-bottom: 133%;
-}
-
-.afkl-lazy-image-loading [afkl-lazy-image-loaded ~= done] {
-  padding-bottom: 0;
+  min-height: 300px;
 }

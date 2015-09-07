@@ -5,14 +5,14 @@
   }
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 540px) and (max-width: 767px) {
   .jumping-block:nth-child(3n+1) {
     clear: left;
     //border: 1px dashed #904050;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 540px) {
   .jumping-block:nth-child(2n+1) {
     clear: left;
     //border: 1px dashed #904050;
