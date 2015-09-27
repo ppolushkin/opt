@@ -19,6 +19,7 @@
 //= require app
 //= require page-controller
 //= require store-controller
+//= require active-menu-class-directive.js
 // require_tree
 
 
