@@ -3,7 +3,7 @@
     <div data-ng-repeat="product in products" class="col-xs-4 col-sm-3 jumping-block">
         <div class="product-block shadow center-block">
             <img class="img-responsive center-block rounded-upper-corners" src="/images/spinner.jpg" lazy-img="{{product.img}}"/>
-            <div class="top-padding"><strong data-ng-bind="product.name"></strong> <small data-ng-bind-template="({{product.article}})"></small></div>
+            <div class="two-lines-block top-padding"><strong data-ng-bind="product.name"></strong> <small data-ng-bind-template="({{product.article}})"></small></div>
             <div class="small" data-ng-bind="product.size"></div>
             <div><strong data-ng-bind="product.price"></strong></div>
         </div>
