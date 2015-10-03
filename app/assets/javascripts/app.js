@@ -1,7 +1,7 @@
 (function() {
     "use strict";
 
-    angular.module('obelisk', ['ngRoute', 'obeliskControllers']);
+    angular.module('obelisk', ['ngRoute', 'obeliskControllers', 'ngAnimate', 'ui.bootstrap']);
     angular.module('obeliskControllers', ['ngSanitize', 'angularLazyImg']);
 
     angular.module('obelisk').config(['$routeProvider', '$locationProvider',

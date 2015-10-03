@@ -1,3 +1,23 @@
+@media (min-width: 768px) {
+  .short-brand {
+    display: none;
+  }
+
+  .long-brand {
+    display: inline;
+  }
+}
+
+@media (min-width: 0) and (max-width: 767px) {
+  .short-brand {
+    display: inline;
+  }
+
+  .long-brand {
+    display: none;
+  }
+}
+
 @media (max-width: 320px) {
   .slogan {
     display: none;
@@ -46,3 +66,4 @@
 .active-menu {
   background-color: $dark;
 }
+

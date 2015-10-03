@@ -1,0 +1,19 @@
+body {
+  min-width: 320px;
+  max-width: 1560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clear-left {
+  clear: left;
+}
+
+.content {
+  margin-top: 40px;
+  min-height: 1300px;
+}
+
+.modal-footer {
+  border-top: none !important;
+}
