@@ -1,7 +1,7 @@
 <body data-ng-app="obelisk">
 
-<div class="container-fluid offset initially-hidden" id="login_area" ng-controller="LoginCtrl">
-  <div class="row text-left small">
+<div class="two-lines-block" data-ng-controller="LoginCtrl">
+
     <% if session[:admin] %>
         <div class="col-xs-1 col-xs-offset-9">
           <small><a href="#">Сообщения</a></small>
@@ -9,9 +9,11 @@
         <div class="col-xs-1"><a href="#">Страницы</a></div>
         <div class="col-xs-1"><a class="logout-link" href="/logout">Выйти</a></div>
     <% else %>
-        <div class="col-xs-1 col-xs-offset-11"><button type="button" class="btn btn-default" ng-click="open()">Open me!</button></div>
+      <div class="login-link">
+        <a href="#" data-ng-click="open()">Войти</a>
+      </div>
     <% end %>
-  </div>
+
 </div>
 
 <div role="navigation" class="navbar navbar-inverse shadow">
