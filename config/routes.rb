@@ -40,6 +40,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'api/products', :controller => 'products_rest', :action => 'all_products'
+  get 'api/secret', :controller => 'products_rest', :action => 'secret'
   get 'api/revisions/last/:ref', :controller => 'revisions_rest', :action => 'last_by_ref'
+  post 'api/login', :controller => 'sessions_rest', :action => 'log_in'
 
 end

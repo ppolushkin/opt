@@ -10,6 +10,10 @@
         <div class="col-xs-1"><a class="logout-link" href="/logout">Выйти</a></div>
     <% else %>
       <div class="login-link">
+        <a href="#" data-ng-click="checkSecretPage()">Get Secret page</a>
+      </div>
+
+      <div class="login-link">
         <a href="#" data-ng-click="open()">Войти</a>
       </div>
     <% end %>

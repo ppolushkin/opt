@@ -16,12 +16,68 @@
                 templateUrl: '/partials/login.html',
                 animation: true,
                 size: 'sm',
-                backdropClass: 'zhopa'
+                controller: 'LoginFormCtrl'
             });
-            $log.log('open');
+        };
+
+        $scope.checkSecretPage = function() {
+            $http.get('api/secret').then(
+                function() {
+                    $log.log('success')
+                },
+                function() {
+                    $log.log('failed')
+                }
+            );
+        }
+
+    }
+
+
+    angular.module('obeliskControllers').controller('LoginFormCtrl', LoginFormCtrl);
+
+    LoginFormCtrl.$inject = ['$scope', '$modalInstance', '$http', '$log'];
+
+    function LoginFormCtrl($scope, $modalInstance, $http, $log) {
+
+        //$scope.login = 'cheburaska@mail.ru';
+
+        $scope.ok = function () {
+            $log.log('check username/password');
+            $log.log($scope.login);
+            $log.log($scope.password);
+
+            var obj = {'name':$scope.login, 'password' : $scope.password};
+            $http.post('api/login', obj).then(
+                function() {
+                    $log.log('login success')
+                },
+                function() {
+                    $log.log('login failed')
+                }
+            );
+
+
+
+            $modalInstance.close();
+        };
+
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+
+        $scope.register = function() {
+            $log.log('register');
+        };
+
+        $scope.forgotPassword = function() {
+            $log.log('forgotPassword');
         }
 
 
     }
+
+
+
 })();
 

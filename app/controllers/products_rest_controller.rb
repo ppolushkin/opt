@@ -11,6 +11,14 @@ class ProductsRestController  < RestApplicationController
     show_products(params[:goods_type])
   end
 
+  #GET api/secret
+  def secret
+    render json: {
+               :message => 'you passed'
+           },
+           status: 200
+  end
+
   protect_from_forgery
 
   def show_products(goods_type)
