@@ -6,6 +6,21 @@ class SessionsRestController < RestApplicationController
 
   skip_before_filter :authorize
 
+  #GET api/login
+  def is_log_in
+    if session[:admin]
+      render json: {
+                 :message => 'success'
+             },
+             status: 200
+    else
+      render json: {
+                 :message => 'not authorized'
+             },
+             status: 401
+    end
+  end
+
   #POST api/login
   def log_in
     if authenticate_user(params[:name], params[:password])
@@ -23,6 +38,7 @@ class SessionsRestController < RestApplicationController
     end
   end
 
+  #POST api/logout
   def log_out
     session[:admin] = false
     render json: {

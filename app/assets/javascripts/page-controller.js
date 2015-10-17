@@ -18,7 +18,6 @@
         $http.get('api/revisions/last/'+ $scope.page_id).success(function (data) {
             $scope.content = data.content;
             $log.log('success');
-            //jQuery(".thumb img").lazyload();
         });
 
 

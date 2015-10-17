@@ -11,8 +11,6 @@
 
         $http.get(url).success(function (data) {
             $scope.products = data;
-            //$log.log('1');
-            //jQuery(".thumb img").lazyload();
         });
 
     }

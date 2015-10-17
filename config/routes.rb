@@ -5,12 +5,12 @@ Rails.application.routes.draw do
 
   get "search", :controller => "search", :action => "search", :as=>"search"
 
-  controller :sessions do
-    get 'login' => :show_login_form, :as => 'login'
-    get 'login_area' => :login_area
-    post 'login' => :log_in
-    delete 'logout' => :log_out
-  end
+  # controller :sessions do
+  #   get 'login' => :show_login_form, :as => 'login'
+  #   get 'login_area' => :login_area
+  #   post 'login' => :log_in
+  #   delete 'logout' => :log_out
+  # end
 
   # get "ritual_venki", :controller => "store", :action => "show_venki", :as=>"venki"
   # get "ritual_korsinu", :controller => "store", :action => "show_korsinu", :as=>"korsinu"
@@ -42,6 +42,9 @@ Rails.application.routes.draw do
   get 'api/products', :controller => 'products_rest', :action => 'all_products'
   get 'api/secret', :controller => 'products_rest', :action => 'secret'
   get 'api/revisions/last/:ref', :controller => 'revisions_rest', :action => 'last_by_ref'
+
+  get 'api/login', :controller => 'sessions_rest', :action => 'is_log_in'
   post 'api/login', :controller => 'sessions_rest', :action => 'log_in'
+  post 'api/logout', :controller => 'sessions_rest', :action => 'log_out'
 
 end

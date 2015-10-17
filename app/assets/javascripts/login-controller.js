@@ -11,13 +11,41 @@
 
     function LoginCtrl($scope, $modal, $http, $log) {
 
+        $scope.init = function() {
+            $http.get('api/login').then(
+                function() {
+                    $scope.loggedIn = true;
+                },
+                function() {
+                    $scope.loggedIn = false;
+                }
+            );
+        };
+
         $scope.open = function() {
-            $modal.open({
+            var modalInstance = $modal.open({
                 templateUrl: '/partials/login.html',
                 animation: true,
                 size: 'sm',
                 controller: 'LoginFormCtrl'
             });
+
+            modalInstance.result.then(function (loggedIn) {
+                $scope.loggedIn = loggedIn;
+            });
+
+        };
+
+        $scope.logout = function() {
+            $http.post('api/logout', {}).then(
+                function() {
+                    $log.log('logout success');
+                    $scope.loggedIn = false;
+                },
+                function() {
+                    $log.log('logout failed')
+                }
+            );
         };
 
         $scope.checkSecretPage = function() {
@@ -29,8 +57,9 @@
                     $log.log('failed')
                 }
             );
-        }
+        };
 
+        $scope.init();
     }
 
 
@@ -44,22 +73,19 @@
 
         $scope.ok = function () {
             $log.log('check username/password');
-            $log.log($scope.login);
-            $log.log($scope.password);
 
             var obj = {'name':$scope.login, 'password' : $scope.password};
             $http.post('api/login', obj).then(
                 function() {
-                    $log.log('login success')
+                    $log.log('login success');
+                    $modalInstance.close(true);
                 },
                 function() {
-                    $log.log('login failed')
+                    $log.log('login failed');
+                    $modalInstance.close(false);
                 }
             );
 
-
-
-            $modalInstance.close();
         };
 
         $scope.cancel = function () {
@@ -74,10 +100,7 @@
             $log.log('forgotPassword');
         }
 
-
     }
-
-
 
 })();
 
