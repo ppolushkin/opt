@@ -16,6 +16,10 @@
         <a href="#" data-ng-click="forgotPassword()">Восстановление пароля</a><br/>
     </div>
 
+    <div data-ng-show="loginFailed" class="form-group text-danger">
+        Имя пользователя или пароль указаны не верно
+    </div>
+
     <div class="form-group">
         <button class="btn btn-primary" type="button" data-ng-click="ok()">OK</button>
         <button class="btn btn-warning" type="button" data-ng-click="cancel()">Cancel</button>

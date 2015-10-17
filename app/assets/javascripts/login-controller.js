@@ -69,7 +69,7 @@
 
     function LoginFormCtrl($scope, $modalInstance, $http, $log) {
 
-        //$scope.login = 'cheburaska@mail.ru';
+        $scope.loginFailed = false;
 
         $scope.ok = function () {
             $log.log('check username/password');
@@ -78,11 +78,12 @@
             $http.post('api/login', obj).then(
                 function() {
                     $log.log('login success');
+                    $scope.loginFailed = false;
                     $modalInstance.close(true);
                 },
                 function() {
                     $log.log('login failed');
-                    $modalInstance.close(false);
+                    $scope.loginFailed = true;
                 }
             );
 
