@@ -7,6 +7,7 @@
     "angular-route": "1.4.5",
     "bootstrap-sass-official": "latest",
     "angular-lazy-img": "latest",
-    "angular-bootstrap": "latest"
+    "angular-bootstrap": "latest",
+    "angular-xeditable": "latest"
   }
 }

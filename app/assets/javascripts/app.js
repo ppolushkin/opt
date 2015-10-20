@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module('obelisk', ['ngRoute', 'obeliskControllers', 'ngAnimate', 'ui.bootstrap']);
-    angular.module('obeliskControllers', ['ngSanitize', 'angularLazyImg']);
+    angular.module('obeliskControllers', ['ngSanitize', 'angularLazyImg', 'ui.bootstrap', 'xeditable']);
 
     angular.module('obelisk').config(['$routeProvider', '$locationProvider',
         function($routeProvider, $locationProvider) {
@@ -92,6 +92,9 @@
                 };
             }]);
 
+    angular.module('obelisk').run(function(editableOptions) {
+        editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+    });
 
 
 })();
