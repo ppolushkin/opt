@@ -2,23 +2,23 @@
 
 <div class="two-lines-block" data-ng-controller="LoginCtrl">
 
-  <div data-ng-show="loggedIn" class="login-link">
+  <div data-ng-show="loggedIn" class="right-block">
     <a href="#" data-ng-click="logout()">Выйти</a>
   </div>
 
-  <div data-ng-show="!loggedIn" class="login-link">
+  <div data-ng-show="!loggedIn" class="right-block">
     <a href="#" data-ng-click="open()">Войти</a>
   </div>
 
-  <div data-ng-show="loggedIn" class="login-link">
+  <div data-ng-show="loggedIn" class="right-block">
     <a href="#">Страницы</a>
   </div>
 
-  <div data-ng-show="loggedIn" class="login-link">
+  <div data-ng-show="loggedIn" class="right-block">
     <a href="#">Товары</a>
   </div>
 
-  <div data-ng-show="loggedIn" class="login-link">
+  <div data-ng-show="loggedIn" class="right-block">
     <a href="#" data-ng-click="checkSecretPage()">Get Secret page</a>
   </div>
 
@@ -52,6 +52,12 @@
       </ul>
 
     </div>
+  </div>
+</div>
+
+<div data-sticky class="transparent-block two-lines-block">
+  <div class="right-block">
+    <a href="#" class="strong black">Корзина: 0 наименований, 0 р.</a>
   </div>
 </div>
 

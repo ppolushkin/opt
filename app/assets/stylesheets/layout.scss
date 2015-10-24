@@ -10,7 +10,7 @@ body {
 }
 
 .content {
-  margin-top: 40px;
+  margin-top: 20px;
   min-height: 1300px;
 }
 
@@ -18,8 +18,14 @@ body {
   border-top: none !important;
 }
 
-.login-link {
+.right-block {
   float: right;
   margin-right: 20px;
   margin-top: 2ex;
+}
+
+.transparent-block {
+  width: 100%;
+  background-color:  rgba(204, 204, 204, 0.9);
+  margin-top: 0;
 }

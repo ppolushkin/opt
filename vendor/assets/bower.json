@@ -8,6 +8,7 @@
     "bootstrap-sass-official": "latest",
     "angular-lazy-img": "latest",
     "angular-bootstrap": "latest",
-    "angular-xeditable": "latest"
+    "angular-xeditable": "latest",
+    "ngSticky": "latest"
   }
 }

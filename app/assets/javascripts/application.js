@@ -25,6 +25,7 @@
 //= require angular-bootstrap/ui-bootstrap-tpls.min
 //= require angular-animate/angular-animate.min
 //= require angular-xeditable/dist/js/xeditable.min
+//= require ngSticky/dist/sticky.min
 
 // require_tree
 
