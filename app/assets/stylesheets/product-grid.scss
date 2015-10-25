@@ -37,15 +37,43 @@
   transition: linear;
 }
 
-.product-block:hover {
-  transform: scale(1.0075);
+.product-block img {
   cursor: pointer;
 }
 
-.product-block.shadow:hover {
+.product-block.selected {
+  transform: scale(1.0075);
+}
+
+.product-block.shadow.selected {
   box-shadow: 5px 5px 4px $shadow-color;
 }
 
 .top-padding {
   padding-top: 1ex;
+}
+
+.info-block {
+  position: relative;
+  width: 100%;
+  height: 6ex;
+}
+
+.product-size {
+  position: absolute;
+  top: 1ex;
+  left: 13px;
+}
+
+.product-price {
+  position: absolute;
+  top: 3ex;
+  left: 18px;
+}
+
+.product-amount {
+  position: absolute;
+  top: 1ex;
+  right: 20px;
+  cursor: pointer;
 }
