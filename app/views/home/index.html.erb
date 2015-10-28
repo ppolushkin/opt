@@ -56,8 +56,10 @@
 </div>
 
 <div data-sticky class="transparent-block two-lines-block">
-  <div class="right-block">
-    <a href="#" class="strong black">Корзина: 0 наименований, 0 р.</a>
+  <div class="right-block" data-ng-controller="BasketCtrl">
+    <a href="#" class="strong black">Корзина:
+      <span data-ng-bind="basket.namesAmount()"></span> наименований,
+      <span data-ng-bind="basket.price()"></span> р.</a>
   </div>
 </div>
 

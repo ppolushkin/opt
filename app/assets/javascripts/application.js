@@ -20,6 +20,8 @@
 //= require page-controller
 //= require store-controller
 //= require login-controller
+//= require basket-service
+//= require basket-controller
 //= require active-menu-class-directive.js
 //= require angular-bootstrap/ui-bootstrap.min
 //= require angular-bootstrap/ui-bootstrap-tpls.min

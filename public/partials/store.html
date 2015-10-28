@@ -7,13 +7,23 @@
             <div class="info-block">
                 <div class="small product-size" data-ng-bind="product.size"></div>
                 <div class="product-price">
-                    <strong data-ng-bind="product.price"></strong>
+                    <strong data-ng-bind="product.price + ' р.'"></strong>
                 </div>
                 <div class="product-amount">
-                    <a href="#" class="black" data-editable-number="product.amount" data-e-min="0"  data-buttons="no" data-blur="submit" data-e-style="width: 80px">
+                    <a href="#"
+                       class="black"
+                       data-editable-number="product.amount"
+                       data-e-min="0"
+                       data-buttons="no"
+                       data-blur="submit"
+                       onaftersave="updateAmount(product)"
+                       data-e-style="width: 80px">
                         <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
                         <strong data-ng-bind="product.amount"></strong>
                     </a>
+                    <span class="glyphicon glyphicon-remove left-offset-5" aria-hidden="true"
+                          data-ng-show="isInBasket(product)"
+                            data-ng-click="removeFromBasket(product)"></span>
                 </div>
             </div>
         </div>

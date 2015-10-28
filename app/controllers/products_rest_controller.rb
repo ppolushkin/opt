@@ -45,7 +45,7 @@ class ProductsRestController  < RestApplicationController
           :id => p.id,
           :name => p.name,
           :article => p.article,
-          :price => sprintf("%u р", p.price),
+          :price => sprintf("%u", p.price),
           :img => p.medium_img.url,
           :size => p.width.to_s + 'x' + p.height.to_s + ' см'
       }

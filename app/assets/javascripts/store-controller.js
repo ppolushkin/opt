@@ -2,33 +2,58 @@
     "use strict";
     angular.module('obeliskControllers').controller('StoreCtrl', StoreCtrl);
 
-    StoreCtrl.$inject = ['$scope', '$route', '$routeParams', '$http', '$log'];
+    StoreCtrl.$inject = ['basketService', '$scope', '$route', '$routeParams', '$http', '$log'];
 
-    function StoreCtrl($scope, $route, $routeParams, $http, $log) {
+    function StoreCtrl(basketService, $scope, $route, $routeParams, $http, $log) {
 
-        $scope.goods_type = $scope.UTIL.getNavId($route, $routeParams);
+        $scope.init = function () {
+            $scope.goods_type = $scope.UTIL.getNavId($route, $routeParams);
 
-        var url = 'api/products/?goods_type='+$scope.goods_type;
+            var url = 'api/products/?goods_type=' + $scope.goods_type;
 
-        $http.get(url).success(function (data) {
-            $scope.products = data;
-        });
+            $http.get(url).success(function (data) {
+                $scope.products = data;
 
-        $scope.putToBasket = function(product) {
+                var l = $scope.products.length;
+                for (var i = 0; i < l; i++) {
+                    var product = $scope.products[i];
+                    product.amount = basketService.basket.getAmount(product.article);
+                }
+
+            });
+        };
+
+        $scope.putToBasket = function (product) {
             if (product.amount == null) {
                 product.amount = 1;
             } else {
                 product.amount += 1;
             }
+            basketService.basket.put(product);
         };
 
-        $scope.isInBasket = function(product) {
+        $scope.updateAmount = function (product) {
+            if (product.amount == null || product.amount == 0) {
+                basketService.basket.delete(product);
+            } else {
+                basketService.basket.put(product);
+            }
+        };
+
+        $scope.removeFromBasket = function (product) {
+            product.amount = null;
+            basketService.basket.delete(product);
+        };
+
+        $scope.isInBasket = function (product) {
             if (product.amount == null) {
                 return false;
             } else {
-                return product.amount >0;
+                return product.amount > 0;
             }
-        }
+        };
+
+        $scope.init();
 
     }
 })();
