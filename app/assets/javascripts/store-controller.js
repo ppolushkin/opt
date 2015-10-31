@@ -17,7 +17,7 @@
                 var l = $scope.products.length;
                 for (var i = 0; i < l; i++) {
                     var product = $scope.products[i];
-                    product.amount = basketService.basket.getAmount(product.article);
+                    product.amount = basketService.basket.getProductAmount(product.article);
                 }
 
             });

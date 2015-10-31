@@ -12,8 +12,7 @@
         return {
 
             basket: {
-
-                getAmount: function(article) {
+                getProductAmount: function(article) {
                     if (items[article]) {
                         return items[article].amount;
                     } else {
@@ -34,6 +33,14 @@
                     var result = 0;
                     for (var a in items) {
                         result = result + 1;
+                    }
+                    return result;
+                },
+
+                productsAmount: function() {
+                    var result = 0;
+                    for (var a in items) {
+                        result = result + items[a].amount;
                     }
                     return result;
                 },

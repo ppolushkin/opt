@@ -2,7 +2,7 @@
 
     <div data-ng-repeat="product in products" class="col-xs-4 col-sm-3 jumping-block">
         <div class="product-block shadow center-block" data-ng-class="{selected: isInBasket(product)}">
-            <img class="img-responsive center-block rounded-upper-corners" src="/images/spinner.jpg" lazy-img="{{product.img}}" data-ng-click="putToBasket(product)"/>
+            <img class="img-responsive center-block rounded-upper-corners" src="/images/spinner.png" lazy-img="{{product.img}}" data-ng-click="putToBasket(product)"/>
             <div class="two-lines-block top-padding"><strong data-ng-bind="product.name"></strong> <small data-ng-bind-template="({{product.article}})"></small></div>
             <div class="info-block">
                 <div class="small product-size" data-ng-bind="product.size"></div>
