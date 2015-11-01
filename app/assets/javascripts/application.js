@@ -28,6 +28,7 @@
 //= require angular-animate/angular-animate.min
 //= require angular-xeditable/dist/js/xeditable.min
 //= require ngSticky/dist/sticky.min
+//= require ngstorage/ngStorage.min
 
 // require_tree
 
