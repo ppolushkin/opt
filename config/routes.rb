@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get "buy", to: 'home#index'
   get "calc", to: 'home#index'
   get "goods", to: 'home#index'
+  get "order", to: 'home#index'
 
   get 'page/:page_name', to: 'home#index'
   get 'store/:goods_type', to: 'home#index'

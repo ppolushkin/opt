@@ -9,19 +9,22 @@
         $scope.init = function () {
 
             var loadProducts = function(goods_type, onSuccess) {
+
                 var url = 'api/products/?goods_type=' + $scope.goods_type;
-                debugger;
-                if ($sessionStorage.products == undefined ||
-                    $sessionStorage.products[goods_type] == undefined
-                ) {
+
+                if ($sessionStorage.products == undefined) {
+                    $sessionStorage.products = {};
+                }
+
+                if ($sessionStorage.products[$scope.goods_type] == undefined) {
                     $http.get(url).success(function (data) {
                         $scope.products = data;
-                        $sessionStorage.products[goods_type] = data;
+                        $sessionStorage.products[$scope.goods_type] = data;
 
                         onSuccess();
                     });
                 } else {
-                    $scope.products = $sessionStorage.products[goods_type];
+                    $scope.products = $sessionStorage.products[$scope.goods_type];
                     onSuccess();
                 }
             };
