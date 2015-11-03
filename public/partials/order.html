@@ -1,5 +1,27 @@
-<div class="container-fluid" data-ng-cloack>
+<div class="container" data-ng-cloack>
 
-    I'm order page
+    <h3>Заказ</h3>
 
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Артикль</th>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Количество</th>
+            <th>Итого</th>
+        </tr>
+        </thead>
+
+        <tr data-ng-repeat="item in basket.getItems()">
+            <td data-ng-bind="item.article" ></td>
+            <td data-ng-bind="item.name" ></td>
+            <td data-ng-bind="item.price" ></td>
+            <td data-ng-bind="item.amount" ></td>
+            <td data-ng-bind="item.amount * item.price"></td>
+        </tr>
+
+    </table>
+
+    </div>
 </div>

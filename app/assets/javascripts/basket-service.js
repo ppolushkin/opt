@@ -12,6 +12,12 @@
         return {
 
             basket: {
+
+                getItems: function() {
+                    return basket.items;
+                },
+
+
                 getProductAmount: function (article) {
                     if (basket.items[article]) {
                         return basket.items[article].amount;
