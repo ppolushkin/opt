@@ -1,4 +1,4 @@
-<body data-ng-app="obelisk">
+<body data-ng-app="obelisk" id="top">
 
 <div class="two-lines-block" data-ng-controller="LoginCtrl">
 
@@ -57,7 +57,7 @@
 
 <div data-sticky class="transparent-block two-lines-block">
   <div class="right-block" data-ng-controller="BasketCtrl">
-    <a href="/order" class="strong black">Корзина:
+    <a href="/order#top" class="strong black">Корзина:
       <span data-ng-bind="basket.namesAmount()"></span> наименований,
       <span data-ng-bind="basket.productsAmount()"></span> товаров,
       <span data-ng-bind="basket.price()"></span> р.</a>
