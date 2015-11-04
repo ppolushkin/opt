@@ -2,7 +2,7 @@
 
 <div class="two-lines-block" data-ng-controller="LoginCtrl">
 
-  <div data-ng-show="loggedIn" class="right-block">
+  <div data-ng-show="loggedIn" class="right-block ng-hide">
     <a href="#" data-ng-click="logout()">Выйти</a>
   </div>
 
@@ -10,15 +10,15 @@
     <a href="#" data-ng-click="open()">Войти</a>
   </div>
 
-  <div data-ng-show="loggedIn" class="right-block">
+  <div data-ng-show="loggedIn" class="right-block ng-hide">
     <a href="#">Страницы</a>
   </div>
 
-  <div data-ng-show="loggedIn" class="right-block">
+  <div data-ng-show="loggedIn" class="right-block ng-hide">
     <a href="#">Товары</a>
   </div>
 
-  <div data-ng-show="loggedIn" class="right-block">
+  <div data-ng-show="loggedIn" class="right-block ng-hide">
     <a href="#" data-ng-click="checkSecretPage()">Get Secret page</a>
   </div>
 

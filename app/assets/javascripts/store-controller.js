@@ -15,7 +15,7 @@
             }
 
             if ($sessionStorage.shownOnPage[$scope.goods_type] == undefined) {
-                $sessionStorage.shownOnPage[$scope.goods_type] = 48; //can be divided on 2,3,4
+                $sessionStorage.shownOnPage[$scope.goods_type] = 36; //can be divided on 2,3,4
             }
 
             var loadProducts = function(goods_type, onSuccess) {
@@ -83,7 +83,7 @@
         };
 
         $scope.showMore = function() {
-            $sessionStorage.shownOnPage[$scope.goods_type] += 48;
+            $sessionStorage.shownOnPage[$scope.goods_type] += 36;
         };
 
         $scope.hasMore = function() {
