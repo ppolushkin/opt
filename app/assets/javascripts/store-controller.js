@@ -8,6 +8,16 @@
 
         $scope.init = function () {
 
+            $scope.goods_type = $scope.UTIL.getNavId($route, $routeParams);
+
+            if ($sessionStorage.shownOnPage == undefined) {
+                $sessionStorage.shownOnPage = {};
+            }
+
+            if ($sessionStorage.shownOnPage[$scope.goods_type] == undefined) {
+                $sessionStorage.shownOnPage[$scope.goods_type] = 48; //can be divided on 2,3,4
+            }
+
             var loadProducts = function(goods_type, onSuccess) {
 
                 var url = 'api/products/?goods_type=' + $scope.goods_type;
@@ -28,8 +38,6 @@
                     onSuccess();
                 }
             };
-
-            $scope.goods_type = $scope.UTIL.getNavId($route, $routeParams);
 
             loadProducts($scope.goods_type, function() {
                 var l = $scope.products.length;
@@ -67,6 +75,22 @@
                 return false;
             } else {
                 return product.amount > 0;
+            }
+        };
+
+        $scope.shownOnPage = function () {
+            return $sessionStorage.shownOnPage[$scope.goods_type];
+        };
+
+        $scope.showMore = function() {
+            $sessionStorage.shownOnPage[$scope.goods_type] += 48;
+        };
+
+        $scope.hasMore = function() {
+            if ($scope.products == undefined || $scope.shownOnPage() == undefined) {
+                return false;
+            } else {
+                return $scope.products.length > $scope.shownOnPage();
             }
         };
 
