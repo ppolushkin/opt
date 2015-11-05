@@ -55,12 +55,14 @@
   </div>
 </div>
 
-<div data-sticky class="transparent-block two-lines-block">
-  <div class="right-block" data-ng-controller="BasketCtrl">
-    <a href="/order#top" class="strong black">Корзина:
-      <span data-ng-bind="basket.namesAmount()"></span> наименований,
-      <span data-ng-bind="basket.productsAmount()"></span> товаров,
-      <span data-ng-bind="basket.price()"></span> р.</a>
+<div data-ng-controller="BasketCtrl" data-ng-hide="isOnBasketPage()">
+  <div data-sticky class="transparent-block two-lines-block">
+    <div class="right-block">
+      <a href="/order#top" class="strong black">Корзина:
+        <span data-ng-bind="basket.namesAmount()"></span> наименований,
+        <span data-ng-bind="basket.productsAmount()"></span> товаров,
+        <span data-ng-bind="basket.price() + ' р.'"></span></a>
+    </div>
   </div>
 </div>
 

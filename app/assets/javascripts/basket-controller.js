@@ -2,10 +2,18 @@
     "use strict";
     angular.module('obeliskControllers').controller('BasketCtrl', BasketCtrl);
 
-    BasketCtrl.$inject = ['basketService', '$scope', '$http', '$log'];
+    BasketCtrl.$inject = ['basketService', '$scope', '$location', '$log'];
 
-    function BasketCtrl(basketService, $scope, $http, $log) {
+    function BasketCtrl(basketService, $scope, $location, $log) {
+
         $scope.basket = basketService.basket;
+
+        $scope.isOnBasketPage = function() {
+            var r = '/order#top' === $location.url();
+            //$log.log('isOnBasketPage = ' + r );
+            return r;
+        }
+
     }
 })();
 
