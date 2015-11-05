@@ -15,8 +15,7 @@
         };
 
         $scope.isBasketEmpty = function() {
-            $log.log('names = ' + $scope.basket.namesAmount());
-            return $scope.basket.namesAmount() == 0;
+            return $scope.basket.isEmpty();
         };
 
     }

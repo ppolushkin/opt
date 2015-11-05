@@ -55,10 +55,20 @@
   </div>
 </div>
 
-<div data-ng-controller="BasketCtrl" data-ng-hide="isOnBasketPage()">
-  <div data-sticky class="transparent-block two-lines-block">
+<div data-ng-controller="BasketCtrl">
+  <div data-sticky
+       class="transparent-block two-lines-block"
+       data-ng-if="!isOnBasketPage()">
+    <a href="/order#top" class="btn btn-xs btn-primary right-block">
+      Оформить заказ
+    </a>
+
+    <button type="button" class="btn btn-xs btn-danger right-block" data-ng-click="reset()">
+      Сбросить
+    </button>
+
     <div class="right-block">
-      <a href="/order#top" class="strong black">Корзина:
+      <a href="/order#top" class="strong black">Выбрано:
         <span data-ng-bind="basket.namesAmount()"></span> наименований,
         <span data-ng-bind="basket.productsAmount()"></span> товаров,
         <span data-ng-bind="basket.price() + ' р.'"></span></a>

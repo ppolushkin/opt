@@ -12,7 +12,16 @@
             var r = '/order#top' === $location.url();
             //$log.log('isOnBasketPage = ' + r );
             return r;
-        }
+        };
+
+        $scope.reset = function() {
+            $scope.basket.reset();
+        };
+
+        $scope.isBasketEmpty = function() {
+            return $scope.basket.isEmpty();
+        };
+
 
     }
 })();

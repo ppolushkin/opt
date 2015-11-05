@@ -13,6 +13,15 @@
 
             basket: {
 
+                isEmpty: function() {
+                    for (var a in basket.items) {
+                        if (basket.items.hasOwnProperty(a)) {
+                            return false;
+                        }
+                    }
+                    return true;
+                },
+
                 reset: function() {
                     $localStorage.items = {};
                 },
