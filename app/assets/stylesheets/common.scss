@@ -24,5 +24,13 @@ a.black:hover, a.black:visited, a.black:active, a.black:link {
 
 .long-btn {
   width: 100%;
-  margin: 0 0px 20px;
+  margin: 0 0 20px;
+}
+
+.left-margin {
+  margin: 0 0 0 20px;
+}
+
+.default-padding {
+  padding: 20px;
 }

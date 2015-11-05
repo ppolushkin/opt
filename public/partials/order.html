@@ -1,8 +1,12 @@
 <div class="container" data-ng-cloack>
 
-    <h3>Заказ</h3>
+    <h3>Выбранные товары</h3>
 
-    <table class="table table-striped">
+    <p class="default-padding lead bg-info ng-hide"  data-ng-show="isBasketEmpty()">
+        Товары не выбраны. Чтобы добавить товар в заказ нажмите на его изображение.
+    </p>
+
+    <table class="table table-striped" data-ng-hide="isBasketEmpty()">
         <thead>
         <tr>
             <th>Артикль</th>
@@ -31,7 +35,6 @@
                 </a>
             </td>
 
-
             <td data-ng-bind="item.amount * item.price + ' р.'" class="text-right"></td>
         </tr>
 
@@ -46,6 +49,21 @@
         </tfoot>
 
     </table>
+
+    <button
+            type="button"
+            class="btn btn-lg btn-primary pull-right left-margin"
+            data-ng-class="{disabled : isBasketEmpty()}">
+        Оформить заказ
+    </button>
+
+    <button
+            type="button"
+            class="btn btn-danger pull-right left-margin"
+            data-ng-click="reset()"
+            data-ng-class="{disabled : isBasketEmpty()}">
+        Сбросить выбранные товары
+    </button>
 
 </div>
 </div>

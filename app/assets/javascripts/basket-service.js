@@ -13,6 +13,10 @@
 
             basket: {
 
+                reset: function() {
+                    $localStorage.items = {};
+                },
+
                 getItems: function() {
                     return basket.items;
                 },
