@@ -19,7 +19,9 @@
 
         <tr data-ng-repeat="item in basket.getItems()">
             <td data-ng-bind="item.article" class="text-left"></td>
-            <td data-ng-bind="item.name" class="text-left"></td>
+            <td class="text-left">
+                <a href="{{item.img}}" class="fancybox" title="Sample title"><span data-ng-bind="item.name"></span></a>
+            </td>
             <td data-ng-bind="item.price + ' р.'" class="text-right"></td>
             <td class="text-right">
                 <a href="#"

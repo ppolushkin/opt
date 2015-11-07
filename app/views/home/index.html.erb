@@ -94,6 +94,13 @@
 
 <script>
     $.noConflict();
+    jQuery(document).ready(function() {
+        jQuery(".fancybox").fancybox();
+    });
+
+    jQuery('.fancybox').fancybox({
+        'scrolling': 'no'
+    })
 </script>
 
 </body>

@@ -16,6 +16,7 @@
 
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "fancybox/source/jquery.fancybox"; //it was renamed to scss
 @import "xeditable"; //it should be = @import "angular-xeditable/dist/css/xeditable.css";
 
 @import "layout";

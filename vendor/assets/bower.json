@@ -10,6 +10,7 @@
     "angular-bootstrap": "latest",
     "angular-xeditable": "latest",
     "ngSticky": "latest",
-    "ngstorage": "latest"
+    "ngstorage": "latest",
+    "fancybox": "latest"
   }
 }
