@@ -8,10 +8,24 @@
     function BasketService($log, $localStorage) {
 
         var basket = $localStorage.$default({items: {}});
+        var onPutListeners = [];
 
         return {
 
             basket: {
+
+                addOnPutListener: function(listenerFn) {
+                    onPutListeners.push(listenerFn)
+                },
+
+                removeOnPutListener: function(listenerFn) {
+                    for(var i in onPutListeners){
+                        if(onPutListeners[i]==listenerFn){
+                            onPutListeners.splice(i, 1);
+                            break;
+                        }
+                    }
+                },
 
                 isEmpty: function() {
                     for (var a in basket.items) {
@@ -42,6 +56,9 @@
                 put: function (product) {
                     //debugger;
                     basket.items[product.article] = product;
+                    for (var i = 0; i < onPutListeners.length; i++) {
+                        onPutListeners[i]();
+                    }
                 },
 
                 delete: function (product) {

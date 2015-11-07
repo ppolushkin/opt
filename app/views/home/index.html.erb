@@ -67,7 +67,9 @@
       Сбросить
     </button>
 
-    <div class="right-block">
+    <div
+    class="right-block"
+    data-ng-class="{shake : isShaking}">
       <a href="/order#top" class="strong black">Выбрано:
         <span data-ng-bind="basket.namesAmount()"></span> наименований,
         <span data-ng-bind="basket.productsAmount()"></span> товаров,

@@ -2,11 +2,36 @@
     "use strict";
     angular.module('obeliskControllers').controller('BasketCtrl', BasketCtrl);
 
-    BasketCtrl.$inject = ['basketService', '$scope', '$location', '$log'];
+    BasketCtrl.$inject = ['basketService', '$scope', '$location', '$timeout'];
 
-    function BasketCtrl(basketService, $scope, $location, $log) {
+    function BasketCtrl(basketService, $scope, $location, $timeout) {
 
-        $scope.basket = basketService.basket;
+        var timer;
+
+        var onPutListener = function() {
+            $scope.isShaking = true;
+
+            timer = $timeout(
+                function() {
+                    $scope.isShaking = false;
+                },
+                1000
+            )
+        };
+
+        $scope.init = function() {
+            $scope.basket = basketService.basket;
+            $scope.isShaking = false;
+            $scope.basket.addOnPutListener(onPutListener);
+
+        }();
+
+        $scope.$on("$destroy", function() {
+            if (timer) {
+                $timeout.cancel(timer);
+            }
+            $scope.basket.removeOnPutListener(onPutListener);
+        });
 
         $scope.isOnBasketPage = function() {
             var r = '/order#top' === $location.url();
