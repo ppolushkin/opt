@@ -24,8 +24,13 @@ body {
   margin-top: 2ex;
 }
 
-.transparent-block {
+.transparent-basket-block {
   width: 100%;
   background-color:  rgba(204, 204, 204, 0.9);
   margin-top: 0;
+  height: 50px;
+}
+
+.order-btn {
+  margin-top: 10px;
 }
