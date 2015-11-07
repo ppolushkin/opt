@@ -8,7 +8,12 @@
 
         var timer;
 
-        var onPutListener = function() {
+        $scope.init = function() {
+            $scope.basket = basketService.basket;
+            $scope.isShaking = false;
+        }();
+
+        $scope.$on('putToBasket', function() {
             $scope.isShaking = true;
 
             timer = $timeout(
@@ -17,20 +22,12 @@
                 },
                 1000
             )
-        };
-
-        $scope.init = function() {
-            $scope.basket = basketService.basket;
-            $scope.isShaking = false;
-            $scope.basket.addOnPutListener(onPutListener);
-
-        }();
+        });
 
         $scope.$on("$destroy", function() {
             if (timer) {
                 $timeout.cancel(timer);
             }
-            $scope.basket.removeOnPutListener(onPutListener);
         });
 
         $scope.isOnBasketPage = function() {
@@ -46,7 +43,6 @@
         $scope.isBasketEmpty = function() {
             return $scope.basket.isEmpty();
         };
-
 
     }
 })();

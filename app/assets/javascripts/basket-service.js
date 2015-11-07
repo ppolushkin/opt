@@ -3,29 +3,15 @@
 
     angular.module('obelisk').factory('basketService', BasketService);
 
-    BasketService.$inject = ['$log', '$localStorage'];
+    BasketService.$inject = ['$log', '$localStorage', '$rootScope'];
 
-    function BasketService($log, $localStorage) {
+    function BasketService($log, $localStorage, $rootScope) {
 
         var basket = $localStorage.$default({items: {}});
-        var onPutListeners = [];
 
         return {
 
             basket: {
-
-                addOnPutListener: function(listenerFn) {
-                    onPutListeners.push(listenerFn)
-                },
-
-                removeOnPutListener: function(listenerFn) {
-                    for(var i in onPutListeners){
-                        if(onPutListeners[i]==listenerFn){
-                            onPutListeners.splice(i, 1);
-                            break;
-                        }
-                    }
-                },
 
                 isEmpty: function() {
                     for (var a in basket.items) {
@@ -38,6 +24,7 @@
 
                 reset: function() {
                     $localStorage.items = {};
+                    $rootScope.$broadcast('basketReset');
                 },
 
                 getItems: function() {
@@ -56,9 +43,7 @@
                 put: function (product) {
                     //debugger;
                     basket.items[product.article] = product;
-                    for (var i = 0; i < onPutListeners.length; i++) {
-                        onPutListeners[i]();
-                    }
+                    $rootScope.$broadcast('putToBasket');
                 },
 
                 delete: function (product) {

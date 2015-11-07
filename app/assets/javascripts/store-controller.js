@@ -94,6 +94,10 @@
             }
         };
 
+        $scope.$on('basketReset', function() {
+            $scope.init();
+        });
+
         $scope.init();
 
     }
