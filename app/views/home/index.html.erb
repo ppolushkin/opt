@@ -59,21 +59,23 @@
   <div data-sticky
        class="transparent-basket-block"
        data-ng-if="!isOnBasketPage()">
-    <a href="/order#top" class="btn btn-sm btn-primary right-block order-btn">
+    <a href="/order#top" class="btn btn-sm btn-primary right-block order-btn hideOnSmall">
       Оформить заказ
     </a>
 
-    <button type="button" class="btn btn-xs btn-danger right-block" data-ng-click="reset()">
+    <button type="button" class="btn btn-xs btn-danger right-block hideOnSmall" data-ng-click="reset()">
       Сбросить
     </button>
 
     <div
     class="right-block"
     data-ng-class="{shake : isShaking}">
-      <a href="/order#top" class="strong black">Выбрано:
+      <a href="/order#top" class="strong black">
+        <span class="hideOnSmall hideOnMedium">Выбрано:</span>
         <span data-ng-bind="basket.namesAmount()"></span> наименований,
         <span data-ng-bind="basket.productsAmount()"></span> товаров,
-        <span data-ng-bind="basket.price() + ' р.'"></span></a>
+        <span data-ng-bind="basket.price() + ' р.'"></span>
+      </a>
     </div>
   </div>
 </div>
