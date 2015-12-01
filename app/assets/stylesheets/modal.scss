@@ -10,12 +10,26 @@
   margin-top: 10px;
 }
 
+.btn-ok {
+  position: absolute;
+  right: 5px;
+  top: 0;
+}
+
 #amount {
   width: 110px;
 }
 
-.right-btn-block {
-  float: right;
-  margin-right: 5px;
-  margin-top: 2ex;
+@media (max-width: 767px) {
+  .btn-ok {
+    position: absolute;
+    right: 5px;
+    top: 25px;
+  }
+
+  #amount {
+    width: 75%;
+
+  }
+
 }
