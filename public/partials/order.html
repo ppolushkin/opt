@@ -10,8 +10,8 @@
         <thead>
         <tr>
             <th>Название</th>
-            <th class="text-right hideOnSmall">Пожелания по оформлению</th>
-            <th class="text-right">Цена</th>
+            <th class="hideOnSmall">Пожелания по оформлению</th>
+            <th class="text-right hideOnSmall">Цена</th>
             <th class="text-right">Количество</th>
             <th class="text-right">Итого</th>
         </tr>
@@ -38,7 +38,7 @@
             </td>
 
 
-            <td data-ng-bind="item.price + '&nbsp;р.'" class="text-right"></td>
+            <td data-ng-bind="item.price + '&nbsp;р.'" class="text-right hideOnSmall"></td>
             <td class="text-right">
                 <a href="#"
                    class="black"
@@ -60,7 +60,7 @@
         <tr class="success strong">
             <td></td>
             <td class="hideOnSmall"></td>
-            <td></td>
+            <td class="hideOnSmall"></td>
             <td class="text-right" data-ng-bind="basket.productsAmount()"></td>
             <td class="text-right" data-ng-bind="basket.price() + 'р.'"></td>
         </tr>
@@ -68,20 +68,23 @@
 
     </table>
 
-    <button
-            type="button"
-            class="btn btn-lg btn-success pull-right left-margin"
-            data-ng-class="{disabled : isBasketEmpty()}">
-        Оформить заказ
-    </button>
+    <div class="relative">
+        <button
+                type="button"
+                class="btn btn-lg btn-success pull-right"
+                data-ng-class="{disabled : isBasketEmpty()}">
+            Оформить заказ
+        </button>
 
-    <button
-            type="button"
-            class="btn btn-danger pull-right left-margin"
-            data-ng-click="reset()"
-            data-ng-class="{disabled : isBasketEmpty()}">
-        Сбросить
-    </button>
+        <button
+                type="button"
+                class="btn btn-danger"
+                data-ng-click="reset()"
+                data-ng-class="{disabled : isBasketEmpty()}">
+            Сбросить
+        </button>
+    </div>
+
 
 </div>
 </div>
