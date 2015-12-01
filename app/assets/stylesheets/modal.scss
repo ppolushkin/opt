@@ -10,6 +10,11 @@
   margin-top: 10px;
 }
 
+#comment {
+  width: 100%;
+  resize: none;
+}
+
 .btn-ok {
   position: absolute;
   right: 5px;
@@ -17,7 +22,8 @@
 }
 
 #amount {
-  width: 110px;
+  width: 120px;
+  float: right !important;
 }
 
 @media (max-width: 767px) {
@@ -28,8 +34,7 @@
   }
 
   #amount {
-    width: 75%;
-
+    float: none !important;
   }
 
 }

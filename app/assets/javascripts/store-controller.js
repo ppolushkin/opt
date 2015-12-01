@@ -63,14 +63,15 @@
                 size: 'sm',
                 controller: 'ToBasketCtrl',
                 resolve: {
-                    amount: function () {
-                        return product.amount;
+                    product: function () {
+                        return product;
                     }
                 }
             });
 
             modalInstance.result.then(function (obj) {
                 product.amount = obj.amount;
+                product.comment = obj.comment;
                 basketService.basket.put(product);
 
                 if (obj.navigate) {
@@ -132,14 +133,16 @@
      */
     angular.module('obeliskControllers').controller('ToBasketCtrl', ToBasketCtrl);
 
-    ToBasketCtrl.$inject = ['$scope', '$modalInstance', '$log', 'amount'];
+    ToBasketCtrl.$inject = ['$scope', '$modalInstance', '$log', 'product'];
 
-    function ToBasketCtrl($scope, $modalInstance, $log, amount) {
+    function ToBasketCtrl($scope, $modalInstance, $log, product) {
 
-        $scope.amount = amount;
+        $scope.amount = product.amount;
+        $scope.comment = product.comment;
 
         $scope.ok = function () {
-            $modalInstance.close({amount: $scope.amount, navigate: false});
+            $log.log('comment = ' + $scope.comment);
+            $modalInstance.close({amount: $scope.amount, comment: $scope.comment, navigate: false});
         };
 
         $scope.cancel = function () {
@@ -147,7 +150,7 @@
         };
 
         $scope.navigateToOrder = function () {
-            $modalInstance.close({amount: $scope.amount, navigate: true});
+            $modalInstance.close({amount: $scope.amount, comment: $scope.comment, navigate: true});
         };
 
     }
