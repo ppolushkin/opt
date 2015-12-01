@@ -10,7 +10,7 @@
         <thead>
         <tr>
             <th>Название</th>
-            <th>Пожелания по оформлению</th>
+            <th class="text-right hideOnSmall">Пожелания по оформлению</th>
             <th class="text-right">Цена</th>
             <th class="text-right">Количество</th>
             <th class="text-right">Итого</th>
@@ -22,7 +22,7 @@
                 <a href="{{item.img}}" class="fancybox" title="{{item.name}}"><span data-ng-bind="item.name"></span></a>
             </td>
 
-            <td class="text-left">
+            <td class="text-left hideOnSmall">
                 <a href="#"
                    class="black"
                    data-editable-textarea="item.comment"
@@ -59,7 +59,7 @@
         <tfoot>
         <tr class="success strong">
             <td></td>
-            <td></td>
+            <td class="hideOnSmall"></td>
             <td></td>
             <td class="text-right" data-ng-bind="basket.productsAmount()"></td>
             <td class="text-right" data-ng-bind="basket.price() + 'р.'"></td>
