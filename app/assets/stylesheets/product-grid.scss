@@ -4,7 +4,7 @@
   background-image: linear-gradient(315deg, #ccc, #fff);
   border-radius: 6px 6px 4px 4px;
   text-align: center;
-  padding-bottom: 1ex;
+  padding-bottom: 0;
   margin-bottom: 25%;
   margin-left: auto;
   margin-right: auto;
@@ -32,19 +32,20 @@
 .info-block {
   position: relative;
   width: 100%;
-  height: 6ex;
-}
-
-.product-size {
-  position: absolute;
-  top: 1ex;
-  left: 13px;
+  height: 3ex;
 }
 
 .product-price {
-  position: absolute;
-  top: 3ex;
-  left: 18px;
+  left: 0;
+  top: 5px;
+  position: relative;
+}
+
+.buy-btn {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  height: 4ex;
+  width: 100%;
 }
 
 .product-amount {
@@ -68,20 +69,10 @@
     //border: 1px dashed #904050;
   }
 
-  .product-block {
-    padding-bottom: 4ex;
-  }
-
   .product-amount {
     font-size: 14px;
     right: 10px;
     top: 45px;
-  }
-
-  .product-size, .product-price {
-    left: 0;
-    top: 5px;
-    position: relative;
   }
 
 }
@@ -96,20 +87,10 @@
     width: 50% !important;
   }
 
-  .product-block {
-    padding-bottom: 4ex;
-  }
-
   .product-amount {
     font-size: 14px;
     right: 10px;
     top: 45px;
-  }
-
-  .product-size, .product-price {
-    left: 0;
-    top: 5px;
-    position: relative;
   }
 
 }

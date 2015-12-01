@@ -31,6 +31,7 @@
 //= require ngSticky/dist/sticky.min
 //= require ngstorage/ngStorage.min
 //= require fancybox/source/jquery.fancybox.pack
+//= require ng-autofocus/dist/ng-autofocus.min
 
 // require_tree
 

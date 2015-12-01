@@ -11,6 +11,7 @@
     "angular-xeditable": "latest",
     "ngSticky": "latest",
     "ngstorage": "latest",
-    "fancybox": "latest"
+    "fancybox": "latest",
+    "ng-autofocus": "latest"
   }
 }

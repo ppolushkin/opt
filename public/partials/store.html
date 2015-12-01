@@ -1,34 +1,23 @@
-<div class="container-fluid" data-ng-cloack>
+    <div class="container-fluid" data-ng-cloack>
 
     <div data-ng-repeat="product in products | limitTo: shownOnPage()" class="col-xs-4 col-sm-3 jumping-block">
         <div class="product-block shadow center-block" data-ng-class="{selected: isInBasket(product)}">
-            <img class="img-responsive center-block rounded-upper-corners" src="/images/spinner.png" lazy-img="{{product.img}}" data-ng-click="putToBasket(product)"/>
+            <img class="img-responsive center-block rounded-upper-corners" src="/images/spinner.png" lazy-img="{{product.img}}"/>
             <div class="two-lines-block top-padding">
                 <strong data-ng-bind="product.name"></strong>
                 <small class="hideOnSmall" data-ng-bind-template="({{product.article}})"></small>
             </div>
             <div class="info-block">
-                <div class="small product-size" data-ng-bind="product.size"></div>
                 <div class="product-price">
-                    <strong data-ng-bind="product.price + ' р.'"></strong>
-                </div>
-                <div class="product-amount">
-                    <a href="#"
-                       class="black"
-                       data-editable-number="product.amount"
-                       data-e-min="0"
-                       data-buttons="no"
-                       data-blur="submit"
-                       data-onaftersave="updateAmount(product)"
-                       data-e-style="width: 60px">
-                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                        <strong data-ng-bind="product.amount"></strong>
-                    </a>
-                    <span class="glyphicon glyphicon-remove left-offset-5" aria-hidden="true"
-                          data-ng-show="isInBasket(product)"
-                            data-ng-click="removeFromBasket(product)"></span>
+                    <strong data-ng-bind-template="{{product.price}} р."></strong>
+                    <small class="hideOnSmall" data-ng-bind-template="({{product.size}})"></small>
                 </div>
             </div>
+
+            <a href="#" class="buy-btn btn btn-primary" data-ng-click="openToBasketDialog(product)">
+                <span data-ng-bind="getButtonLabelText(product)"></span>
+            </a>
+
         </div>
     </div>
 

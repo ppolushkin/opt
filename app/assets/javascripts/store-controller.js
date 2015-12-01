@@ -2,9 +2,9 @@
     "use strict";
     angular.module('obeliskControllers').controller('StoreCtrl', StoreCtrl);
 
-    StoreCtrl.$inject = ['basketService', '$scope', '$route', '$routeParams', '$http', '$log',  '$sessionStorage'];
+    StoreCtrl.$inject = ['basketService', '$scope', '$route', '$routeParams', '$http', '$log',  '$sessionStorage', '$modal', '$location'];
 
-    function StoreCtrl(basketService, $scope, $route, $routeParams, $http, $log,  $sessionStorage) {
+    function StoreCtrl(basketService, $scope, $route, $routeParams, $http, $log,  $sessionStorage, $modal, $location) {
 
         $scope.init = function () {
 
@@ -48,13 +48,38 @@
             });
         };
 
-        $scope.putToBasket = function (product) {
-            if (product.amount == null) {
-                product.amount = 1;
+        $scope.getButtonLabelText = function(product) {
+            if ($scope.isInBasket(product)) {
+                return 'В корзине: ' + product.amount;
             } else {
-                product.amount += 1;
+                return 'В корзину';
             }
-            basketService.basket.put(product);
+        };
+
+        $scope.openToBasketDialog = function(product) {
+            var modalInstance = $modal.open({
+                templateUrl: '/partials/to-basket.html',
+                animation: true,
+                size: 'sm',
+                controller: 'ToBasketCtrl',
+                resolve: {
+                    amount: function () {
+                        return product.amount;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (obj) {
+                product.amount = obj.amount;
+                basketService.basket.put(product);
+
+                if (obj.navigate) {
+                    $log.log('navigate');
+                    $location.path("/order").hash("top");
+                }
+
+            });
+
         };
 
         $scope.updateAmount = function (product) {
@@ -101,5 +126,32 @@
         $scope.init();
 
     }
+
+    /**
+     *  ToBasketCtrl
+     */
+    angular.module('obeliskControllers').controller('ToBasketCtrl', ToBasketCtrl);
+
+    ToBasketCtrl.$inject = ['$scope', '$modalInstance', '$log', 'amount'];
+
+    function ToBasketCtrl($scope, $modalInstance, $log, amount) {
+
+        $scope.amount = amount;
+
+        $scope.ok = function () {
+            $modalInstance.close({amount: $scope.amount, navigate: false});
+        };
+
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+
+        $scope.navigateToOrder = function () {
+            $modalInstance.close({amount: $scope.amount, navigate: true});
+        };
+
+    }
+
+
 })();
 

@@ -1,0 +1,26 @@
+<form ng-submit="ok()" class="modal-body">
+
+    <div class="form-inline">
+        <div class="form-group">
+            <label for="amount">Количество:</label>
+            <input
+                    autofocus
+                    min="0"
+                    max="1000"
+                    data-ng-model="amount"
+                    type="number"
+                    class="form-control"
+                    id="amount">
+            <button class="btn btn-primary absolute-right-20" type="submit">OK</button>
+        </div>
+    </div>
+
+    <div class="form-inline">
+        <div class="form-group relative">
+            <a data-ng-click="navigateToOrder()" class="btn btn-sm btn-success order-btn right-btn-block">
+                Оформить заказ
+            </a>
+        </div>
+    </div>
+
+</form>
