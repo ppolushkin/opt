@@ -38,22 +38,29 @@ class OrdersRestController < RestApplicationController
     }
 
     order_items = []
+    total = 0
     req['items'].each do |item|
 
       product = Product.find(item['id'])
-      product_price = sprintf("%u&nbsp;р.", product.price)
+      product_price = sprintf("%uр.", product.price)
       product_name = product.name
 
-      res_item = {
-          :name => product_name,
-          :amount => item['amount'],
-          :price => product_price,
-          :comment => item['comment']
-      }
-      order_items.push(res_item)
+      if (item['amount'] != nil) && (item['amount'] > 0)
+        res_item = {
+            :name => product_name,
+            :amount => item['amount'],
+            :price => product_price,
+            :comment => item['comment']
+        }
+        order_items.push(res_item)
+        total += product.price * item['amount']
+      end
+
     end
 
-    FeedbackMails.send_order_now(order_info, order_items).deliver
+    total_formatted = sprintf("%uр.", total)
+
+    FeedbackMails.send_order_now(order_info, order_items, total_formatted).deliver
 
     render json: {
                :message => 'success'

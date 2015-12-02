@@ -2,38 +2,37 @@
 <html>
 <head>
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+  <style type="text/css">
+      td, th {padding: 10px;border: 1px solid black;}
+      tr:nth-of-type(even) { background-color: #dff0d8; }
+      table {border-collapse: collapse;}
+  </style>
 </head>
 <body>
-
-<h2>Контактная информация</h2>
-
+<h3>Основная информация</h3>
 <table>
   <tr>
     <td>Контактное лицо:</td>
-    <td><%= @order_info[:name] %></td>
+    <td align="right"><%= @order_info[:name] %></td>
   </tr>
   <tr>
     <td>Телефон:</td>
-    <td><%= @order_info[:phone] %></td>
+    <td align="right"><%= @order_info[:phone] %></td>
   </tr>
   <tr>
     <td>Компания:</td>
-    <td><%= @order_info[:companyName] %></td>
+    <td align="right"><%= @order_info[:companyName] %></td>
+  </tr>
+  <tr>
+    <td>Общая сумма:</td>
+    <td align="right"><%= @total_formatted %></td>
   </tr>
   <tr>
     <td>Время:</td>
-    <td><%= @order_time.localtime %></td>
+    <td align="right"><%= @order_time.localtime %></td>
   </tr>
 </table>
-
-<h3>Коментарии к заказу:</h3>
-
-<p>
-  <%= @order_info[:orderComment] %>
-</p>
-
 <h3>Заказ:</h3>
-
 <table>
   <thead>
   <tr>
@@ -44,7 +43,6 @@
     <th align="left">Пожелания</th>
   </tr>
   </thead>
-
   <% number = 1%>
   <% @order_items.each do |item| %>
   <tr>
@@ -52,12 +50,14 @@
     <td align="left"><%= item[:name] %></td>
     <td align="right"><%= item[:amount] %></td>
     <td align="right"><%= item[:price] %></td>
-    <td align="left"><%= item[:comment] %></td>
+    <td align="justified"><%= item[:comment] %></td>
   </tr>
   <% number+=1 %>
   <% end %>
 </table>
-
-
+<h3>Примечание:</h3>
+<p>
+  <%= @order_info[:orderComment] %>
+</p>
 </body>
 </html>
