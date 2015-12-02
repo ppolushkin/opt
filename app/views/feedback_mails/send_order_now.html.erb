@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+</head>
+<body>
+
+<h2>Контактная информация</h2>
+
+<table>
+  <tr>
+    <td>Контактное лицо:</td>
+    <td><%= @order_info[:name] %></td>
+  </tr>
+  <tr>
+    <td>Телефон:</td>
+    <td><%= @order_info[:phone] %></td>
+  </tr>
+  <tr>
+    <td>Компания:</td>
+    <td><%= @order_info[:companyName] %></td>
+  </tr>
+  <tr>
+    <td>Время:</td>
+    <td><%= @order_time.localtime %></td>
+  </tr>
+</table>
+
+<h3>Коментарии к заказу:</h3>
+
+<p>
+  <%= @order_info[:orderComment] %>
+</p>
+
+<h3>Заказ:</h3>
+
+<table>
+  <thead>
+  <tr>
+    <th align="right">№</th>
+    <th align="left">Название</th>
+    <th align="right">Количество</th>
+    <th align="right">Цена</th>
+    <th align="left">Пожелания</th>
+  </tr>
+  </thead>
+
+  <% number = 1%>
+  <% @order_items.each do |item| %>
+  <tr>
+    <td align="right"><%= number %></td>
+    <td align="left"><%= item[:name] %></td>
+    <td align="right"><%= item[:amount] %></td>
+    <td align="right"><%= item[:price] %></td>
+    <td align="left"><%= item[:comment] %></td>
+  </tr>
+  <% number+=1 %>
+  <% end %>
+</table>
+
+
+</body>
+</html>

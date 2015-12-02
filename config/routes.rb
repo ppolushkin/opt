@@ -49,4 +49,6 @@ Rails.application.routes.draw do
   post 'api/login', :controller => 'sessions_rest', :action => 'log_in'
   post 'api/logout', :controller => 'sessions_rest', :action => 'log_out'
 
+  post 'api/orders', :controller => 'orders_rest', :action => 'send_order'
+
 end

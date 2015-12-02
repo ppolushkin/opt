@@ -64,7 +64,6 @@ class FeedbackMailsController < ApplicationController
     end
   end
 
-
   private
 
   def feedback_mail()
