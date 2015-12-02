@@ -23,7 +23,7 @@ class FeedbackMails < ActionMailer::Base
     @order_items = order_items
     @order_time = Time.current
 
-    mail :to => ['pavel.polushkin@gmail.com', 'a_10@bk.ru'], :subject => 'Заказ на ритуальный-венок.рф'
+    mail :to => ['pavel.polushkin@gmail.com'], :subject => 'Заказ на ритуальный-венок.рф'
 
   end
 

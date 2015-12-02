@@ -41,7 +41,7 @@ class OrdersRestController < RestApplicationController
     req['items'].each do |item|
 
       product = Product.find(item['id'])
-      product_price = sprintf("%u р.", product.price)
+      product_price = sprintf("%u&nbsp;р.", product.price)
       product_name = product.name
 
       res_item = {
