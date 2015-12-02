@@ -29,6 +29,7 @@
 
             $http.post('api/orders', postBody).then(
                 function() {
+                    basketService.reset();
                     $log.log('success')
                 },
                 function() {
@@ -94,8 +95,6 @@
 
             return result;
         }
-
-
 
     }
 
