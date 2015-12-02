@@ -69,6 +69,10 @@
                     templateUrl: '/partials/order.html',
                     controller: 'OrderCtrl'
                 }).
+                when('/send-order', {
+                    templateUrl: '/partials/send-order.html',
+                    controller: 'SendOrderCtrl'
+                }).
                 when('/page/:nav_id', {
                     templateUrl: 'partials/wiki.html',
                     controller: 'PageCtrl'

@@ -30,9 +30,10 @@
             }
         });
 
-        $scope.isOnBasketPage = function() {
-            var r = '/order#top' === $location.url();
-            //$log.log('isOnBasketPage = ' + r );
+        $scope.isOnOrderPage = function() {
+            var r = '/order#top' === $location.url()
+                || '/order' === $location.url()
+                || '/send-order' === $location.url();
             return r;
         };
 
