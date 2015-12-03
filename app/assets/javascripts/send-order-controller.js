@@ -6,19 +6,17 @@
 
     SendOrderCtrl.$inject = [
         'basketService',
-        '$rootScope',
         '$scope',
-        '$http',
         '$log',
+        '$sessionStorage',
         '$localStorage',
         '$location'
     ];
 
     function SendOrderCtrl(basketService,
-                           $rootScope,
                            $scope,
-                           $http,
                            $log,
+                           $sessionStorage,
                            $localStorage,
                            $location) {
 
@@ -30,6 +28,7 @@
             $scope.email = $scope.orderInfo.email;
             $scope.companyName = $scope.orderInfo.companyName;
             $scope.orderComment = $scope.orderInfo.orderComment;
+            $sessionStorage.postBody = {};
         }();
 
         $scope.sendOrder = function (valid) {
@@ -42,20 +41,7 @@
 
             saveToLocalStorage();
 
-            var postBody = generatePostBody();
-            //$log.log(postBody);
-
-            $scope.orderInfo.state = 'inProgress';
-            $http.post('api/orders', postBody).then(
-                function () {
-                    $scope.orderInfo.state = 'success';
-                    $rootScope.$broadcast('orderSentSuccessfully');
-                },
-                function () {
-                    $scope.orderInfo.state = 'failed';
-                    $rootScope.$broadcast('orderSendingFailed');
-                }
-            );
+            $sessionStorage.postBody = generatePostBody();
             $location.path('/order-sent').hash("top");
         };
 
