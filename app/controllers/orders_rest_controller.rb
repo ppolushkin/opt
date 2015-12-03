@@ -30,9 +30,12 @@ class OrdersRestController < RestApplicationController
 
     req = JSON.parse(request.body.read.html_safe)
 
+    email = req['orderInfo']['email']
+
     order_info = {
         :phone => req['orderInfo']['phone'],
         :name  => req['orderInfo']['name'],
+        :email  => email,
         :companyName => req['orderInfo']['companyName'],
         :orderComment => req['orderInfo']['orderComment']
     }
@@ -60,7 +63,7 @@ class OrdersRestController < RestApplicationController
 
     total_formatted = sprintf("%uр.", total)
 
-    FeedbackMails.send_order_now(order_info, order_items, total_formatted).deliver
+    FeedbackMails.send_order_now(order_info, order_items, total_formatted, email).deliver
 
     render json: {
                :message => 'success'

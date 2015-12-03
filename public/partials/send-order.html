@@ -1,28 +1,35 @@
 <div class="container" data-ng-cloack>
-    <form>
-        <div class="form-group mandatory" data-ng-class="{'has-error': showPhoneIsEmpty}">
+    <form name="sendOrderForm" novalidate>
+        <div class="form-group mandatory" data-ng-class="{'has-error': submitted && !sendOrderForm.phone.$valid}">
             <label for="phone">Телефон</label>
-            <input type="tel" class="form-control" id="phone" data-ng-model="phone" >
-            <span class="help-block" data-ng-show="showPhoneIsEmpty">Пожалуйста, укажите телефон для обратной связи</span>
+            <input type="tel" class="form-control" id="phone" name="phone" data-ng-model="phone" required>
+            <span class="help-block" data-ng-show="submitted && !sendOrderForm.phone.$valid">Пожалуйста, укажите телефон для обратной связи</span>
         </div>
-        <div class="form-group mandatory" data-ng-class="{'has-error': showNameIsEmpty}">
+
+        <div class="form-group mandatory" data-ng-class="{'has-error': submitted && !sendOrderForm.name.$valid}">
             <label for="contact-name">Имя</label>
-            <input type="text" class="form-control" id="contact-name" data-ng-model="name" >
-            <span class="help-block" data-ng-show="showNameIsEmpty">Пожалуйста, укажите имя для обратной связи</span>
+            <input type="text" class="form-control" id="contact-name" name="name" data-ng-model="name" required>
+            <span class="help-block" data-ng-show="submitted && !sendOrderForm.name.$valid">Пожалуйста, укажите имя для обратной связи</span>
+        </div>
+
+        <div class="form-group" data-ng-class="{'has-error': !sendOrderForm.email.$valid}">
+            <label for="email">E-mail <small>(на этот ящик будет отправлена копия заказа)</small></label>
+            <input type="email" class="form-control" id="email" name="email" data-ng-model="email" >
+            <span class="help-block" data-ng-show="!sendOrderForm.email.$valid">Email указан не верно</span>
         </div>
 
         <div class="form-group">
             <label for="company-name">Название организации</label>
-            <input type="text" class="form-control" id="company-name" data-ng-model="companyName">
+            <input type="text" class="form-control" id="company-name" name="company-name" data-ng-model="companyName">
         </div>
 
         <div class="form-group">
             <label for="send-order-comment">Примечание</label>
-            <textarea type="text" class="form-control" id="send-order-comment"  data-ng-model="orderComment"></textarea>
+            <textarea type="text" class="form-control" id="send-order-comment" name="send-order-comment" data-ng-model="orderComment"></textarea>
         </div>
 
         <div class="relative">
-            <button type="submit" class="btn btn-lg btn-success pull-right" data-ng-click="sendOrder()">Отправить заказ</button>
+            <button type="submit" class="btn btn-lg btn-success pull-right" data-ng-click="sendOrder(sendOrderForm.$valid)">Отправить заказ</button>
         </div>
 
     </form>

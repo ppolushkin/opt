@@ -9,16 +9,20 @@
     function SendOrderCtrl(basketService, $scope, $http, $log, $modal, $localStorage) {
 
         $scope.init = function() {
+            $scope.submitted = false;
             $scope.orderInfo = $localStorage.$default({orderInfo: {}});
             $scope.phone = $scope.orderInfo.phone;
             $scope.name = $scope.orderInfo.name;
+            $scope.email = $scope.orderInfo.email;
             $scope.companyName = $scope.orderInfo.companyName;
             $scope.orderComment = $scope.orderInfo.orderComment;
         }();
 
-        $scope.sendOrder = function () {
-            var isValid = validate();
-            if (!isValid) {
+        $scope.sendOrder = function (valid) {
+
+            $scope.submitted = true;
+            if (!valid) {
+                $log.log('form invalid');
                 return;
             }
 
@@ -29,7 +33,7 @@
 
             $http.post('api/orders', postBody).then(
                 function() {
-                    basketService.reset();
+                    //basketService.reset();
                     $log.log('success')
                 },
                 function() {
@@ -38,28 +42,10 @@
             );
         };
 
-
-        function validate() {
-            var isValid = true;
-            if (!$scope.phone) {
-                $scope.showPhoneIsEmpty = true;
-                isValid = false;
-            } else {
-                $scope.showPhoneIsEmpty = false;
-            }
-
-            if (!$scope.name) {
-                $scope.showNameIsEmpty = true;
-                isValid = false;
-            } else {
-                $scope.showNameIsEmpty = false;
-            }
-            return isValid;
-        }
-
         function saveToLocalStorage() {
             $scope.orderInfo.phone = $scope.phone;
             $scope.orderInfo.name = $scope.name;
+            $scope.orderInfo.email = $scope.email;
             $scope.orderInfo.companyName = $scope.companyName;
             $scope.orderInfo.orderComment = $scope.orderComment;
         }
@@ -70,6 +56,7 @@
                 orderInfo: {
                     phone: $scope.phone,
                     name: $scope.name,
+                    email: $scope.email,
                     companyName: $scope.companyName,
                     orderComment: $scope.orderComment
                 },
