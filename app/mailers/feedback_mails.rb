@@ -24,7 +24,9 @@ class FeedbackMails < ActionMailer::Base
     @order_time = Time.current
     @total_formatted = total_formatted
 
-    to = ["a_10@bk.ru"]
+    #todo:
+    # to = ["a_10@bk.ru"]
+    to = []
 
     if email
       to.push(email)

@@ -24,6 +24,7 @@
 //= require basket-controller
 //= require order-controller
 //= require send-order-controller
+//= require order-sent-controller
 //= require active-menu-class-directive.js
 //= require angular-bootstrap/ui-bootstrap.min
 //= require angular-bootstrap/ui-bootstrap-tpls.min

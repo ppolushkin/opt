@@ -4,11 +4,25 @@
 
     angular.module('obeliskControllers').controller('SendOrderCtrl', SendOrderCtrl);
 
-    SendOrderCtrl.$inject = ['basketService', '$scope', '$http', '$log', '$modal', '$localStorage'];
+    SendOrderCtrl.$inject = [
+        'basketService',
+        '$rootScope',
+        '$scope',
+        '$http',
+        '$log',
+        '$localStorage',
+        '$location'
+    ];
 
-    function SendOrderCtrl(basketService, $scope, $http, $log, $modal, $localStorage) {
+    function SendOrderCtrl(basketService,
+                           $rootScope,
+                           $scope,
+                           $http,
+                           $log,
+                           $localStorage,
+                           $location) {
 
-        $scope.init = function() {
+        $scope.init = function () {
             $scope.submitted = false;
             $scope.orderInfo = $localStorage.$default({orderInfo: {}});
             $scope.phone = $scope.orderInfo.phone;
@@ -31,15 +45,18 @@
             var postBody = generatePostBody();
             //$log.log(postBody);
 
+            $scope.orderInfo.state = 'inProgress';
             $http.post('api/orders', postBody).then(
-                function() {
-                    //basketService.reset();
-                    $log.log('success')
+                function () {
+                    $scope.orderInfo.state = 'success';
+                    $rootScope.$broadcast('orderSentSuccessfully');
                 },
-                function() {
-                    $log.log('failed')
+                function () {
+                    $scope.orderInfo.state = 'failed';
+                    $rootScope.$broadcast('orderSendingFailed');
                 }
             );
+            $location.path('/order-sent').hash("top");
         };
 
         function saveToLocalStorage() {
@@ -71,8 +88,8 @@
 
                     result.items.push(
                         {
-                            id : item.id,
-                            amount : item.amount,
+                            id: item.id,
+                            amount: item.amount,
                             comment: item.comment
                         }
                     );

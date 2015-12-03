@@ -33,6 +33,8 @@
         $scope.isOnOrderPage = function() {
             var r = '/order#top' === $location.url()
                 || '/order' === $location.url()
+                || '/order-sent' === $location.url()
+                || '/order-sent#top' === $location.url()
                 || '/send-order' === $location.url();
             return r;
         };

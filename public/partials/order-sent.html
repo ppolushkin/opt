@@ -1,0 +1,51 @@
+<div class="container" data-ng-cloack>
+
+
+    <div class="row">
+
+        <div class="col-xs-10 col-xs-offset-1" data-ng-show="isInProgress()">
+
+            <h1>Идет отправка заказа</h1>
+
+            <p>
+                Это займет не больше 10 секунд
+            </p>
+        </div>
+
+
+        <div class="col-xs-10 col-xs-offset-1" data-ng-show="isSuccess()">
+
+            <h1 class="text-success">Заказ успешно отправлен</h1>
+
+            <p>
+                Уважаемый(ая) <span data-ng-bind="name"></span> на Ваш почтовый ящик <kbd data-ng-bind="email"></kbd> была отправлена копия заказа.
+                Обычно письмо приходит в течение 10 минут.
+                Если письмо не пришло, проверьте в папке "Спам" и убедитесь, что верно указали свой email.
+            <span class="text-danger">
+                Если Вы все сделали правильно, но письмо так и не пришло, пожалуйста, позвоните по телефону.
+            </span>
+            </p>
+
+        </div>
+
+        <div class="col-xs-10 col-xs-offset-1" data-ng-show="isFailed()">
+
+            <h1 class="text-danger">Произошла ошибка</h1>
+
+            <p class="lead">
+                Не волнуйтесь, Ваш заказ не пропал. Вы можете увидеть его <a href="/order">по этой ссылке</a>.
+            </p>
+
+            <p>
+                Если повторные попытки отправить заказ не увенчались успехом, пожалуйста, позвоните нам.
+            </p>
+
+            <div class="relative">
+                <button class="btn btn-primary pull-right">Отправить повторно</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
