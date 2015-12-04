@@ -33,14 +33,17 @@
             }
         });
 
-        $scope.isOnOrderPage = function() {
-            var r = '/order#top' === $location.url()
+        $scope.isVisible = function() {
+            var shouldHideOnCurrentPage =
+                '/order#top' === $location.url()
                 || '/order' === $location.url()
                 || '/order-sent' === $location.url()
                 || '/order-sent#top' === $location.url()
                 || '/admin/pages' === $location.url()
                 || '/send-order' === $location.url();
-            return r;
+
+
+            return !shouldHideOnCurrentPage && !$scope.isBasketEmpty();
         };
 
         $scope.reset = function() {
