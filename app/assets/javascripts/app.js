@@ -34,6 +34,11 @@
                     nav_id: "contacts"
 
                 }).
+                when('/articles', {
+                    templateUrl: '/partials/wiki.html',
+                    controller: 'PageCtrl',
+                    nav_id: "articles"
+                }).
 
                 when('/ritual_venki', {
                     templateUrl: '/partials/store.html',

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :feedback_mails
   get "feedback", :controller => "feedback_mails", :action => "new", :as => "feedback"
-  post "send_feedback", :controller => "feedback", :action => "send_feedback", :as =>"send_feedback"
+  # post "send_feedback", :controller => "feedback", :action => "send_feedback", :as =>"send_feedback"
 
-  get "search", :controller => "search", :action => "search", :as=>"search"
+  # get "search", :controller => "search", :action => "search", :as=>"search"
 
   # controller :sessions do
   #   get 'login' => :show_login_form, :as => 'login'
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   # root :controller => "pages", :action => "show_by_page_ref", :page_ref => 'about_us', :as => 'about_us'
 
+  get "articles", to: 'home#index'
   get "about_us", to: 'home#index'
   get "ritual_venki", to: 'home#index'
   get "ritual_korsinu", to: 'home#index'
@@ -44,7 +45,8 @@ Rails.application.routes.draw do
 
   get 'api/products', :controller => 'products_rest', :action => 'all_products'
   get 'api/secret', :controller => 'products_rest', :action => 'secret'
-  get 'api/revisions/last/:ref', :controller => 'revisions_rest', :action => 'last_by_ref'
+  get 'api/pages/:ref', :controller => 'pages_rest', :action => 'get_page_by_ref'
+
 
   get 'api/login', :controller => 'sessions_rest', :action => 'is_log_in'
   post 'api/login', :controller => 'sessions_rest', :action => 'log_in'

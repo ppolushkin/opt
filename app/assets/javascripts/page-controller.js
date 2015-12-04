@@ -20,7 +20,7 @@
             }
 
             if ($sessionStorage.pages[$scope.page_id] == undefined) {
-                $http.get('api/revisions/last/'+ $scope.page_id).success(function (data) {
+                $http.get('api/pages/'+ $scope.page_id).success(function (data) {
                     $scope.content = data.content;
                     $sessionStorage.pages[$scope.page_id] = data.content;
                 });
