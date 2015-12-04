@@ -3,20 +3,22 @@
 class PagesRestController < RestApplicationController
 
    skip_before_filter :authorize, :only => [:get_page_by_ref]
+   #skip_before_filter :authorize
 
 
-   #PUT api/page/:ref
+   #PUT api/pages/:ref
    # {
    #     title: "page name",
    #     content : "some text"
    # }
-   def update_page_text
+   def update_page
 
      if params[:ref] == nil
        render json: {
                   :message => 'parameter ref is empty'
               },
               status: 400
+       return
      end
 
      page = Page.find_by(reference: params[:ref], application_name: APPLICATION_NAME)
@@ -35,7 +37,9 @@ class PagesRestController < RestApplicationController
                 status: 404
        else
          page.update_attribute('title', params[:title])
+         page.save
          last_revision.update_attribute('content', params[:content])
+         last_revision.save
          render json: {
                     :message => 'page updated'
                 },
@@ -45,7 +49,13 @@ class PagesRestController < RestApplicationController
 
    end
 
-  #GET api/page/:ref
+  #GET api/pages/
+   def get_all_pages
+     pages = Page.where(application_name: APPLICATION_NAME)
+     render json: pages
+   end
+
+  #GET api/pages/:ref
   def get_page_by_ref
 
     if params[:ref] == nil
@@ -53,6 +63,7 @@ class PagesRestController < RestApplicationController
                  :message => 'parameter ref is empty'
              },
              status: 400
+      return
     end
 
     page = Page.find_by(reference: params[:ref], application_name: APPLICATION_NAME)

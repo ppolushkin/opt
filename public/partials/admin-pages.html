@@ -1,0 +1,66 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1" data-ng-show="!editMode">
+
+            <h2>Страницы</h2>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>url</th>
+                    <th>Название</th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tr data-ng-repeat="page in pages">
+                    <td class="text-left" data-ng-bind="page.reference"></td>
+                    <td class="text-left" data-ng-bind="page.title"></td>
+                    <td class="text-left">
+                        <a class="btn btn-default" href="#" data-ng-click="edit(page)">Редактировать</a>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="col-xs-10 col-xs-offset-1" data-ng-show="editMode">
+            <h2>Редактирование</h2>
+
+            <form name="pageForm" novalidate>
+
+                <div class="form-group mandatory">
+                    <label for="title">Название</label>
+                    <input type="text" class="form-control" id="title" data-ng-model="editingPage.title">
+                </div>
+
+                <div class="form-group mandatory">
+                    <label for="content">Техт</label>
+                    <textarea style="width: 100%" rows="25" id="content" data-ng-model="editingPage.content">
+                    </textarea>
+                </div>
+
+                <div class="relative">
+                    <a href="#"
+                       data-ng-click="save(editingPage)"
+                       data-ng-bind="saveBtnCaption()"
+                       data-ng-class="{'btn-success': !saveFailed, 'btn-danger': saveFailed}"
+                       class="btn btn-lg pull-right">
+                    </a>
+                    <button
+                            type="button"
+                            class="btn btn-default"
+                            data-ng-click="switchOffEditMode()">
+                        Назад
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+
+</div>

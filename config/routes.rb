@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get "order", to: 'home#index'
   get "send-order", to: 'home#index'
   get "order-sent", to: 'home#index'
+  get "admin/pages", to: 'home#index'
 
   get 'page/:page_name', to: 'home#index'
   get 'store/:goods_type', to: 'home#index'
@@ -45,7 +46,10 @@ Rails.application.routes.draw do
 
   get 'api/products', :controller => 'products_rest', :action => 'all_products'
   get 'api/secret', :controller => 'products_rest', :action => 'secret'
+
+  get 'api/pages', :controller => 'pages_rest', :action => 'get_all_pages'
   get 'api/pages/:ref', :controller => 'pages_rest', :action => 'get_page_by_ref'
+  put 'api/pages/:ref', :controller => 'pages_rest', :action => 'update_page'
 
 
   get 'api/login', :controller => 'sessions_rest', :action => 'is_log_in'

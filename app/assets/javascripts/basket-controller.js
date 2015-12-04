@@ -1,5 +1,8 @@
+
 (function () {
+
     "use strict";
+
     angular.module('obeliskControllers').controller('BasketCtrl', BasketCtrl);
 
     BasketCtrl.$inject = ['basketService', '$scope', '$location', '$timeout'];
@@ -35,6 +38,7 @@
                 || '/order' === $location.url()
                 || '/order-sent' === $location.url()
                 || '/order-sent#top' === $location.url()
+                || '/admin/pages' === $location.url()
                 || '/send-order' === $location.url();
             return r;
         };

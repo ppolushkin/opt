@@ -82,6 +82,10 @@
                     templateUrl: '/partials/order-sent.html',
                     controller: 'OrderSentCtrl'
                 }).
+                when('/admin/pages', {
+                    templateUrl: 'partials/admin-pages.html',
+                    controller: 'AdminPagesCtrl'
+                }).
                 when('/page/:nav_id', {
                     templateUrl: 'partials/wiki.html',
                     controller: 'PageCtrl'

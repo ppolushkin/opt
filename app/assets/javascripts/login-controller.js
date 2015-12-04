@@ -7,19 +7,34 @@
 
     angular.module('obeliskControllers').controller('LoginCtrl', LoginCtrl);
 
-    LoginCtrl.$inject = ['$scope', '$modal', '$http', '$log'];
+    LoginCtrl.$inject = [
+        '$scope',
+        '$modal',
+        '$http',
+        '$log',
+        '$sessionStorage',
+        '$rootScope'
+    ];
 
-    function LoginCtrl($scope, $modal, $http, $log) {
-
+    function LoginCtrl(
+        $scope,
+        $modal,
+        $http,
+        $log,
+        $sessionStorage,
+        $rootScope
+    ) {
         $scope.init = function() {
-            $http.get('api/login').then(
-                function() {
-                    $scope.loggedIn = true;
-                },
-                function() {
-                    $scope.loggedIn = false;
-                }
-            );
+            if ($sessionStorage.loggedIn == undefined) {
+                $http.get('api/login').then(
+                    function() {
+                        setLoggedIn(true);
+                    },
+                    function() {
+                        setLoggedIn(false);
+                    }
+                );
+            }
         };
 
         $scope.open = function() {
@@ -31,7 +46,7 @@
             });
 
             modalInstance.result.then(function (loggedIn) {
-                $scope.loggedIn = loggedIn;
+                setLoggedIn(loggedIn);
             });
 
         };
@@ -40,7 +55,7 @@
             $http.post('api/logout', {}).then(
                 function() {
                     $log.log('logout success');
-                    $scope.loggedIn = false;
+                    setLoggedIn(false);
                 },
                 function() {
                     $log.log('logout failed')
@@ -48,18 +63,16 @@
             );
         };
 
-        $scope.checkSecretPage = function() {
-            $http.get('api/secret').then(
-                function() {
-                    $log.log('success')
-                },
-                function() {
-                    $log.log('failed')
-                }
-            );
+        $scope.isLoggedIn = function() {
+            return $sessionStorage.loggedIn
         };
 
         $scope.init();
+
+        function setLoggedIn(bValue) {
+            $sessionStorage.loggedIn = bValue;
+            $rootScope.$broadcast('loggedIn');
+        }
     }
 
 
