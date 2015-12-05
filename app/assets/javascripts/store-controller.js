@@ -56,6 +56,21 @@
             }
         };
 
+        $scope.openDetailsDialog = function(product) {
+
+            var modalInstance = $modal.open({
+                templateUrl: '/partials/product-details.html',
+                animation: true,
+                controller: 'ProductDetailsCtrl',
+                resolve: {
+                    product: function () {
+                        return product;
+                    }
+                }
+            });
+
+        };
+
         $scope.openToBasketDialog = function(product) {
             var modalInstance = $modal.open({
                 templateUrl: '/partials/to-basket.html',
@@ -155,6 +170,27 @@
 
     }
 
+
+    /**
+     *  ProductDetailsCtrl
+     */
+    angular.module('obeliskControllers').controller('ProductDetailsCtrl', ProductDetailsCtrl);
+
+    ProductDetailsCtrl.$inject = ['$scope', '$modalInstance', '$log', '$http', 'product'];
+
+    function ProductDetailsCtrl($scope, $modalInstance, $log, $http, product) {
+
+        $scope.init = function() {
+            $scope.product = product;
+
+            $http.get('api/products/' + product.id).success(function (data) {
+
+                $scope.product.bigImg  = data.bigImg;
+                $scope.product.description  = data.description;
+            });
+        }();
+
+    }
 
 })();
 

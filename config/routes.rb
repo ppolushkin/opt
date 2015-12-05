@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'api/products', :controller => 'products_rest', :action => 'all_products'
+  get 'api/products/:id', :controller => 'products_rest', :action => 'get_product_by_id'
   get 'api/secret', :controller => 'products_rest', :action => 'secret'
 
   get 'api/pages', :controller => 'pages_rest', :action => 'get_all_pages'

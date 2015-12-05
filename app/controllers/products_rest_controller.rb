@@ -4,11 +4,27 @@ class ProductsRestController  < RestApplicationController
 
   include StoreHelper
 
-  skip_before_filter :authorize, :only => [:all_products]
+  skip_before_filter :authorize, :only => [:all_products, :get_product_by_id]
 
   #GET api/products
   def all_products
     show_products(params[:goods_type])
+  end
+
+  #GET api/products/:id
+  def get_product_by_id
+    p = Product.find(params[:id])
+
+    render json: {
+        # :id => p.id,
+        # :name => p.name,
+        # :article => p.article,
+        # :price => sprintf("%u", p.price),
+        # :img => p.medium_img.url,
+        # :bigImg => p.big_img.url,
+        # :size => p.width.to_s + 'x' + p.height.to_s + ' см',
+        :description => p.notes
+    }
   end
 
   #GET api/secret

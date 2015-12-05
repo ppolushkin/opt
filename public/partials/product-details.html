@@ -1,0 +1,18 @@
+<div class="modal-body product-detail clearfix relative">
+
+    <div class="product-detail-info">
+
+        <h3 data-ng-bind="product.name"></h3>
+
+        <p data-ng-bind-html="product.description"></p>
+
+    </div>
+
+    <img class="product-detail-img" data-ng-src="{{product.img}}"/>
+
+    <p class="product-detail-size" data-ng-bind="'Размер: ' + product.size"></p>
+
+    <p class="lead product-detail-price" data-ng-bind="product.price + ' р.'"></p>
+
+</div>
+
