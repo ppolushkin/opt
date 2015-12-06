@@ -1,0 +1,25 @@
+<div class="container">
+
+  <div class="product-detail clearfix relative">
+
+    <div class="product-detail-info" style="float: left; margin-right: 50px;">
+
+      <h3><%= @product.name %></h3>
+
+      <p><%=raw @product.notes %></p>
+
+    </div>
+
+    <img class="product-detail-img" src="<%= @product.medium_img %>"/>
+
+    <p class="product-detail-size" style="left: 30px;">
+      Размер: <%= sprintf("%u р", @product.price) %>
+    </p>
+
+    <p class="lead product-detail-price" style="left: 30px;">
+      <%= product_size @product %>
+    </p>
+
+  </div>
+
+</div>

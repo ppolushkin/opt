@@ -2,8 +2,11 @@
   <% @products.each do |product| %>
       <div class="col-xs-4 col-sm-3 jumping-block">
         <div class="product-block shadow center-block">
-          <img class="img-responsive center-block rounded-upper-corners"
-               src="<%= product.medium_img %>"/>
+
+          <a href="/html/product/<%= product.id %>">
+            <img class="img-responsive center-block rounded-upper-corners"
+                 src="<%= product.medium_img %>"/>
+          </a>
 
           <div class="two-lines-block top-padding">
             <strong><%= product.name %></strong>

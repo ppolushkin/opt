@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   get 'html/may_9', :controller => "store", :action => "show_may_9"
   get 'html/novinki', :controller => "store", :action => "show_novinki"
   get 'html/goods', :controller => "store", :action => "show_goods"
+  get 'html/product/:id', :controller => "store", :action => "product_details"
 
 
 end

@@ -32,6 +32,12 @@ class StoreController < ApplicationController
     render 'store/store', :layout => 'application_html'
   end
 
+  # GET html/product/:id
+  def product_details
+    @product = Product.find(params[:id])
+    render 'store/product_details', :layout => 'application_html'
+  end
+
   protect_from_forgery
 
   def show_products(key, sort)
