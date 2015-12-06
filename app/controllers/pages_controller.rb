@@ -36,14 +36,16 @@ class PagesController < ApplicationController
   def show_by_page_ref
     @page = Page.find_by_reference(params[:page_ref])
 
-    if (@page == nil)
-      redirect_to :action => "new", :page_ref => params[:page_ref]
-    else
-      respond_to do |format|
-        format.html # show.html.erb
-        format.xml { render :xml => @page }
-      end
-    end
+    render 'pages/show_by_page_ref', :layout => 'application_html'
+
+    # if (@page == nil)
+    #   redirect_to :action => "new", :page_ref => params[:page_ref]
+    # else
+    #   respond_to do |format|
+    #     format.html # show.html.erb
+    #     format.xml { render :xml => @page }
+    #   end
+    # end
   end
 
   # GET /pages/new

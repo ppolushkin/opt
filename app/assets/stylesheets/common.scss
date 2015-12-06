@@ -10,6 +10,10 @@
   font-weight: bolder;
 }
 
+.gray, a.gray:hover, a.gray:visited, a.gray:active, a.gray:link {
+  color: lightgray;
+}
+
 .black {
   color: black;
 }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Оптовая розничная продажа ритуальных траурных венков и корзин по России.</title>
+
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'html_application' %>
+</head>
+
+<body id="top">
+
+<div class="two-lines-block">
+
+  <div class="right-block">
+    <a href="/" >Перейти на полную версию сайта</a>
+  </div>
+
+</div>
+
+
+<div role="navigation" class="navbar navbar-inverse shadow">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-place">
+        <a class="navbar-brand brand-font long-brand" href="/html">Производственная Компания "Венок"</a>
+        <a class="navbar-brand brand-font short-brand" href="/html">ПК "Венок"</a>
+        <!--<span class="slogan initially-hidden">У нас только трезвые сварщики!</span>-->
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right clear-left" data-active-menu-class="active-menu">
+        <li><a href="/html/about_us">О Компании</a></li>
+        <li><a href="/html/ritual_venki">Венки</a></li>
+        <li><a href="/html/ritual_korsinu">Корзины</a></li>
+        <li><a href="/html/goods">Кресты</a></li>
+        <li><a href="/html/may_9">Защитникам Отечества</a></li>
+        <li class="hidden-xs hidden-sm"><a href="/html/novinki">Новинки</a></li>
+        <li><a href="/html/page/contacts">Контакты</a></li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<div>
+  <%= yield %>
+</div>
+
+<div class="modal-footer">
+  <p class="text-muted">
+    Производственная компния "Венок" 2015
+  </p>
+
+  <p>
+    <a href="/html/page/links">Ссылки</a>
+    <a href="/html/articles#top">Статьи</a>
+  </p>
+</div>
+
+</body>
+
+</html>

@@ -51,6 +51,11 @@ class ProductsRestController  < RestApplicationController
 
     if (goods_type == 'may_9')
       all_products = Product.where("may9 <> '0'").order("price desc")
+    end
+
+    if (goods_type == 'novinki')
+      dt = Date.today - 6.months
+      all_products = Product.where("created_at > '#{dt}'").order("created_at desc")
     else
       all_products = Product.where("article like '#{key}%'").order("price desc")
     end
