@@ -2,16 +2,20 @@
 
 <div class="two-lines-block" data-ng-controller="LoginCtrl">
 
-  <div data-ng-show="isLoggedIn()" class="right-block ng-hide">
-    <a href="#" data-ng-click="logout()">Выйти</a>
-  </div>
-
   <div class="right-block">
     <a href="html/about_us" target="_blank">Перейти на упрощенную версию сайта</a>
   </div>
 
   <div data-ng-show="isLoggedIn()" class="right-block ng-hide">
-    <a href="/admin/pages">Страницы</a>
+    <a href="#" class="small gray" data-ng-click="logout()">Выйти</a>
+  </div>
+
+  <div data-ng-show="isLoggedIn()" class="right-block ng-hide">
+    <a href="/admin/pages" class="small gray">Страницы</a>
+  </div>
+
+  <div data-ng-show="!isLoggedIn()" class="right-block ng-hide">
+    <a href="#" class="small gray" data-ng-click="open()">Вход для администратора</a>
   </div>
 
 </div>
@@ -83,10 +87,6 @@
     <a href="/page/links#top">Ссылки</a>
     <a href="/articles#top">Статьи</a>
   </p>
-
-  <div data-ng-controller="LoginCtrl">
-    <a data-ng-show="!isLoggedIn()" href="#" class="small gray" data-ng-click="open()">Вход для администратора</a>
-  </div>
 
 </div>
 
