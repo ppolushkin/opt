@@ -24,7 +24,7 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.assets.debug = false
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
-  config.assets.js_compressor = :yui
+  config.assets.js_compressor = :closure
   config.assets.compile = true
   config.assets.digest = true
   config.assets.raise_runtime_errors = true
