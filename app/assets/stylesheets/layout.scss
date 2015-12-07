@@ -41,8 +41,15 @@ body {
   }
 }
 
+@media (min-width: 541px) {
+  .showOnSmall {
+    display: none;
+  }
+}
+
 @media (max-width: 540px) {
   .hideOnSmall {
     display: none;
   }
 }
+
