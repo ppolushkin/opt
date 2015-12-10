@@ -164,6 +164,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
+    newrelic_rpm (3.5.7.59)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.1)
@@ -239,6 +240,7 @@ DEPENDENCIES
   carrierwave (>= 0.10.0)
   fog (~> 1.29.0)
   jbuilder (~> 2.0)
+  newrelic_rpm
   pg (>= 0.18.1)
   rails (= 4.2.1)
   rails_12factor
