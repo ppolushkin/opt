@@ -28,7 +28,7 @@ module Rails4app
     config.assets.paths << Rails.root.join("vendor","assets","bower_components","fancybox","source")
 
     config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff|woff2)$)
-    config.serve_static_assets = true
+    config.serve_static_files = true
 
   end
 end

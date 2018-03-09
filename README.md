@@ -6,6 +6,11 @@
  - Add new dependency to Bowerfile
  - <code>bin/rake bower:install</code>
 
+##How to read logs from Heroku:
+  heroku logs -n 1500 --app venok-opt-dev | less
+
+## Share database
+https://devcenter.heroku.com/articles/heroku-postgresql#sharing-heroku-postgres-between-applications
 
 ### Setup docker environment
 
