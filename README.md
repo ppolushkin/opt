@@ -1,7 +1,3 @@
-## TODO
- - Migrate from Webrik server. There is heroku documentation about warning 
-
-
 ## README
 
 [This is link](http://angular-rails.com) to good article that explains configuration of this project.
@@ -11,7 +7,7 @@
  - <code>bin/rake bower:install</code>
 
 
-== Setup docker environment ==
+### Setup docker environment
 
 https://docs.docker.com/compose/rails/
 
@@ -36,9 +32,8 @@ c)  make restore
     pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d dev_venok venok_db_2018-01-20.dump
 8. Restart cluster again
 
-
-== Run docker container ==
+## Run docker container
 sudo docker run -it -p 3001:3001 -v ~/Workspace/opt:/home/opt ppolushkin/opt_rails:1.0 bash -l
 
-== Run environment ==
+## Run environment
 sudo rm ~/Workspace/opt/tmp/pids/server.pid && sudo docker-compose up
