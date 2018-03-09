@@ -2,13 +2,16 @@ source 'https://rubygems.org'
 ruby "1.9.3"
 
 gem 'rails', '4.2.1'
+gem 'nokogiri', '=1.6.8.1'
+gem 'execjs'
+gem 'therubyracer'
 gem 'pg', '>= 0.18.1'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'jbuilder', '~> 2.0'
 gem 'carrierwave', '>=0.10.0'
-gem 'fog', '~> 1.29.0'
+gem 'fog', '~> 1.38.0'
 gem 'validates_email_format_of'
 gem 'rails_12factor'
 gem 'bcrypt', '~> 3.1.7'

@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - .:/home/opt
+  rails:
+#    build: .
+    image: ppolushkin/opt_rails:1.0
+    ports:
+    - "3001:3001"
+    volumes:
+    - ~/Workspace/opt:/home/opt
+    command: ["bash", "-l", "-c", "rails server -b 0.0.0.0 -p 3001"]
+    depends_on:
+    - db
+    environment:
+    - AWS_ACCESS_KEY_ID=key_id
+    - AWS_SECRET_ACCESS_KEY_ID=secket
+volumes:
+    pgdata:
