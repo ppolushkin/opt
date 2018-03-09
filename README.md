@@ -33,7 +33,7 @@ c)  make restore
 8. Restart cluster again
 
 ## Run docker container
-sudo docker run -it -p 3001:3001 -v ~/Workspace/opt:/home/opt ppolushkin/opt_rails:1.0 bash -l
+sudo docker run -it -p 3001:3001 -v ~/Workspace/opt:/home/opt ppolushkin/opt_rails:1.1 bash -l
 
 ## Run environment
 sudo rm ~/Workspace/opt/tmp/pids/server.pid && sudo docker-compose up
