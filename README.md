@@ -6,6 +6,12 @@
  - Add new dependency to Bowerfile
  - <code>bin/rake bower:install</code>
 
+## Pages are separated by APPLICATION_NAME:
+###Опт
+APPLICATION_NAME='obelisk'
+###Розница
+APPLICATION_NAME='venok'
+
 ##How to read logs from Heroku:
   heroku logs -n 1500 --app venok-opt-dev | less
 
