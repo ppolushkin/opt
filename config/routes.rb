@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   get "send-order", to: 'home#index'
   get "order-sent", to: 'home#index'
   get "admin/pages", to: 'home#index'
+  get "admin/images", to: 'home#index'
   get 'page/:page_name', to: 'home#index'
   get 'store/:goods_type', to: 'home#index'
   root 'home#index'
@@ -55,6 +56,10 @@ Rails.application.routes.draw do
   post 'api/login', :controller => 'sessions_rest', :action => 'log_in'
   post 'api/logout', :controller => 'sessions_rest', :action => 'log_out'
   post 'api/orders', :controller => 'orders_rest', :action => 'send_order'
+
+  get 'api/images', :controller => 'images', :action => 'get_images'
+  post 'api/images', :controller => 'images', :action => 'save_image'
+  delete 'api/images/:name', :controller => 'images', :action => 'delete_image', :constraints  => { :name => /[0-z\.]+/ }
 
   #
   # Html site

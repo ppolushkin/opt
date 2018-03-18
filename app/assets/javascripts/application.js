@@ -17,7 +17,9 @@
 //= require angular-sanitize/angular-sanitize.min
 //= require angular-lazy-img/release/angular-lazy-img.min
 //= require app
+//= require file-upload-directive
 //= require page-controller
+//= require admin-images-controller
 //= require store-controller
 //= require login-controller
 //= require basket-service

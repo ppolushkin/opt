@@ -1,5 +1,13 @@
 ## README
 
+### TODO:
+Improve UX in image loading
+- make Upload button responsible (disable/enable, progress status)
+
+
+Foto uploader to product manager.
+- read about carrier_wave
+
 [This is link](http://angular-rails.com) to good article that explains configuration of this project.
 
 ### How to install bower component [Documentation](https://github.com/rharriso/bower-rails) 

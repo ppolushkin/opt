@@ -86,6 +86,10 @@
                     templateUrl: 'partials/admin-pages.html',
                     controller: 'AdminPagesCtrl'
                 }).
+                when('/admin/images', {
+                    templateUrl: 'partials/admin-images.html',
+                    controller: 'AdminImagesCtrl'
+                }).
                 when('/page/:nav_id', {
                     templateUrl: 'partials/wiki.html',
                     controller: 'PageCtrl'
