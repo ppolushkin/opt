@@ -20,7 +20,7 @@
                     <td class="text-left" data-ng-bind="image.name"></td>
                     <td class="text-left" data-ng-bind="image.size"></td>
                     <td class="text-left">
-                        <a class="btn btn-link pull-right" href="#" data-ng-click="deleteImage(image.name)">Удалить</a>
+                        <a class="btn btn-link pull-right" href="#" data-ng-click="deleteImage(image)">Удалить</a>
                     </td>
                 </tr>
 
@@ -29,6 +29,7 @@
 
         <div class="row">
             <div class="form-inline bg-info margin-top-10">
+                Выбери ресурс для загрузки: &nbsp;
                 <div class="form-group left-offset-5">
                     <label class="sr-only" for="product_medium_img">Картинка</label>
                     <input id="product_medium_img" type="file" data-file-model="myImage"
@@ -36,6 +37,8 @@
                 </div>
                 <button href="#"
                         data-ng-click="uploadImage()"
+                        data-ng-disabled="!uploadEnabled()"
+                        data-ng-bind="uploadBtnCaption"
                         class="btn btn-sm pull-right">
                     Загрузить
                 </button>

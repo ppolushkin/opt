@@ -23,30 +23,38 @@
     ) {
 
         $scope.init = function () {
-
-            redirectIfNotAllowed();
-            loadImages();
+            doInitialization();
         }();
 
+        $scope.uploadEnabled = function () {
+             return (typeof $scope.myImage !== 'undefined') && !$scope.uploadInProgress;
+        };
 
         $scope.uploadImage = function () {
 
+            $scope.uploadInProgress = true;
+            $scope.uploadBtnCaption = 'Загрузка...';
             var formData = new FormData();
             formData.append('myFile', $scope.myImage);
             $http.post('api/images/', formData, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined}
             }).then(function () {
-                $log.log('upload success');
-                loadImages();
+                doInitialization();
+            }, function () {
+                doInitialization();
             });
         };
 
+        $scope.deleteImage = function (image) {
 
-        $scope.deleteImage = function (name) {
+            var nm = image.name;
+            image.url = 'Удаление';
 
-            $http.delete('api/images/'+$sanitize(name)).success(function () {
-                loadImages();
+            $http.delete('api/images/'+$sanitize(nm)).success(function () {
+                doInitialization();
+            }, function () {
+                doInitialization();
             });
         };
 
@@ -54,6 +62,14 @@
         $scope.$on('loggedIn', function() {
             redirectIfNotAllowed();
         });
+
+        function doInitialization() {
+
+            $scope.uploadInProgress = false;
+            $scope.uploadBtnCaption = 'Загрузить';
+            redirectIfNotAllowed();
+            loadImages();
+        }
 
 
         function redirectIfNotAllowed() {
