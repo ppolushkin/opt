@@ -34,6 +34,11 @@ class ImagesController < RestApplicationController
 
     upload_image = Rails.root.join('public', 'uploads', id + File.extname(myfile.original_filename))
 
+    dirname = File.dirname(upload_image)
+    unless File.directory?(dirname)
+      FileUtils.mkdir_p(dirname)
+    end
+
     FileUtils.remove_file(upload_image, true)
     File.open(upload_image, 'wb') do |file|
       file.write(myfile.read)
@@ -58,6 +63,8 @@ class ImagesController < RestApplicationController
         :body => File.open(resized_image),
         :public => true
     )
+
+    FileUtils.remove_file(resized_image, true)
 
     render json: {
         :message => 'success'

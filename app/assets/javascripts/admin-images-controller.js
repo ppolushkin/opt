@@ -50,9 +50,9 @@
         $scope.deleteImage = function (image) {
 
             var nm = image.name;
-            image.url = 'Удаление';
+            image.url = 'Удаление ' + nm;
 
-            $http.delete('api/images/'+$sanitize(nm)).success(function () {
+            $http.delete('api/images/'+nm).success(function () {
                 doInitialization();
             }, function () {
                 doInitialization();

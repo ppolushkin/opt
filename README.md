@@ -21,7 +21,7 @@ APPLICATION_NAME='obelisk'
 APPLICATION_NAME='venok'
 
 ##How to read logs from Heroku:
-  heroku logs -n 1500 --app venok-opt-dev | less
+  heroku logs -n 500 --app venok-opt-dev | less
 
 ## Share database
 https://devcenter.heroku.com/articles/heroku-postgresql#sharing-heroku-postgres-between-applications
