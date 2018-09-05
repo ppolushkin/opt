@@ -16,6 +16,7 @@ gem 'validates_email_format_of'
 gem 'rails_12factor'
 gem 'bcrypt', '~> 3.1.7'
 gem 'newrelic_rpm'
+gem "mini_magick"
 
 group :development, :test do
 

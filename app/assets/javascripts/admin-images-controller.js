@@ -35,6 +35,7 @@
             $scope.uploadInProgress = true;
             $scope.uploadBtnCaption = 'Загрузка...';
             var formData = new FormData();
+            formData.append('id','венок');
             formData.append('myFile', $scope.myImage);
             $http.post('api/images/', formData, {
                 transformRequest: angular.identity,

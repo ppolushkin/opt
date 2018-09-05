@@ -48,11 +48,11 @@ b)  connect to it
     sudo docker exec -it 665b4a1e17b6 bash
 c)  make restore
     cd /home/opt
-    pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d dev_venok venok_db_2018-01-20.dump
+    pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d dev_venok database-backup.dump
 8. Restart cluster again
 
 ## Run docker container
-sudo docker run -it -p 3001:3001 -v ~/Workspace/opt:/home/opt ppolushkin/opt_rails:1.1 bash -l
+sudo docker run -it -p 3001:3001 -v ~/Workspace/opt:/home/opt ppolushkin/opt_rails:1.2 bash -l
 
 ## Run environment
 sudo rm ~/Workspace/opt/tmp/pids/server.pid && sudo docker-compose up

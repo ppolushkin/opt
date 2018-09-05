@@ -29,13 +29,33 @@ class ImagesController < RestApplicationController
   #
   def save_image
 
-    name = params[:myFile].original_filename
+    myfile = params[:myFile]
+    id = params[:id]
 
+    upload_image = Rails.root.join('public', 'uploads', id + File.extname(myfile.original_filename))
+
+    FileUtils.remove_file(upload_image, true)
+    File.open(upload_image, 'wb') do |file|
+      file.write(myfile.read)
+    end
+
+    name = id + '-400x400' + File.extname(myfile.original_filename)
+    resized_image = Rails.root.join('public', 'uploads', name)
+
+    image = MiniMagick::Image.open(upload_image)
+    image.resize "400x400"
+    # image.format "jpg"
+    image.write resized_image
+
+    FileUtils.remove_file(upload_image, true)
+
+    # name = params[:myFile].original_filename
+    #
     directory = getDirectory
 
     file = directory.files.create(
         :key => name,
-        :body => params[:myFile].read,
+        :body => File.open(resized_image),
         :public => true
     )
 
@@ -78,8 +98,7 @@ class ImagesController < RestApplicationController
 
     render json: {
         :message => 'success'
-    },
-           status: 200
+    }, status: 200
 
   end
 

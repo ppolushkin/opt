@@ -59,7 +59,7 @@ Rails.application.routes.draw do
 
   get 'api/images', :controller => 'images', :action => 'get_images'
   post 'api/images', :controller => 'images', :action => 'save_image'
-  delete 'api/images/:name', :controller => 'images', :action => 'delete_image', :constraints  => { :name => /[0-z\.]+/ }
+  delete 'api/images/:name', :controller => 'images', :action => 'delete_image', :constraints  => { :name => /[^\/]+/ }
 
   #
   # Html site

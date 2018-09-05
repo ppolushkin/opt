@@ -1,13 +1,13 @@
 version: '3'
 services:
   db:
-    image: postgres
+    image: postgres:10.3
     volumes:
       - pgdata:/var/lib/postgresql/data
       - .:/home/opt
   rails:
 #    build: .
-    image: ppolushkin/opt_rails:1.1
+    image: ppolushkin/opt_rails:1.2.2
     ports:
     - "3001:3001"
     volumes:
