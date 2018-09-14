@@ -56,3 +56,9 @@ sudo docker run -it -p 3001:3001 -v ~/Workspace/opt:/home/opt ppolushkin/opt_rai
 
 ## Run environment
 sudo rm ~/Workspace/opt/tmp/pids/server.pid && sudo docker-compose up
+
+## App
+http://localhost:3001 
+
+## PgAdmin
+http://localhost:3002

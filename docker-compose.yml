@@ -5,6 +5,17 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
       - .:/home/opt
+    logging:
+        driver: none
+  pgAdmin:
+    image: dpage/pgadmin4
+    ports:
+    - "3002:80"
+    environment:
+    - PGADMIN_DEFAULT_EMAIL=pg@admin.com
+    - PGADMIN_DEFAULT_PASSWORD=pg@admin.com
+    logging:
+        driver: none #задолбал
   rails:
 #    build: .
     image: ppolushkin/opt_rails:1.2.2
